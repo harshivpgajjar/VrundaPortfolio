@@ -5,76 +5,76 @@
 @tailwind utilities;
 
 :root {
-  /* Dark Academia Light Mode - Warm Tones */
-  --background: hsl(20, 14%, 4%);
-  --foreground: hsl(46, 20%, 85%);
-  --muted: hsl(20, 8%, 12%);
-  --muted-foreground: hsl(46, 15%, 65%);
-  --popover: hsl(20, 14%, 6%);
-  --popover-foreground: hsl(46, 20%, 85%);
-  --card: hsl(20, 14%, 6%);
-  --card-foreground: hsl(46, 20%, 85%);
-  --border: hsl(20, 10%, 18%);
-  --input: hsl(20, 10%, 15%);
-  --primary: hsl(45, 60%, 55%);
-  --primary-foreground: hsl(20, 14%, 4%);
-  --secondary: hsl(20, 8%, 12%);
-  --secondary-foreground: hsl(46, 20%, 85%);
-  --accent: hsl(20, 8%, 15%);
-  --accent-foreground: hsl(46, 20%, 85%);
+  /* Midnight Academia - Deep Blues & Purples */
+  --background: hsl(240, 25%, 5%);
+  --foreground: hsl(210, 20%, 85%);
+  --muted: hsl(245, 20%, 12%);
+  --muted-foreground: hsl(210, 15%, 65%);
+  --popover: hsl(240, 25%, 6%);
+  --popover-foreground: hsl(210, 20%, 85%);
+  --card: hsl(240, 25%, 6%);
+  --card-foreground: hsl(210, 20%, 85%);
+  --border: hsl(245, 15%, 18%);
+  --input: hsl(245, 15%, 15%);
+  --primary: hsl(280, 65%, 60%);
+  --primary-foreground: hsl(240, 25%, 5%);
+  --secondary: hsl(245, 20%, 12%);
+  --secondary-foreground: hsl(210, 20%, 85%);
+  --accent: hsl(245, 15%, 15%);
+  --accent-foreground: hsl(210, 20%, 85%);
   --destructive: hsl(0, 62%, 50%);
-  --destructive-foreground: hsl(46, 20%, 85%);
-  --ring: hsl(45, 60%, 55%);
+  --destructive-foreground: hsl(210, 20%, 85%);
+  --ring: hsl(280, 65%, 60%);
   --radius: 0.5rem;
 
-  /* Dark Academia Custom Colors */
-  --deep-charcoal: hsl(20, 14%, 4%);
-  --charcoal: hsl(20, 10%, 8%);
-  --rich-brown: hsl(25, 20%, 12%);
-  --warm-parchment: hsl(46, 25%, 18%);
-  --old-paper: hsl(45, 15%, 22%);
-  --antique-gold: hsl(45, 60%, 55%);
-  --burnished-copper: hsl(25, 45%, 45%);
-  --faded-ink: hsl(220, 15%, 35%);
-  --dusty-rose: hsl(15, 25%, 55%);
-  --sage-green: hsl(85, 20%, 40%);
-  --cream-highlight: hsl(46, 30%, 85%);
+  /* Midnight Academia Custom Colors */
+  --deep-charcoal: hsl(240, 25%, 5%);
+  --charcoal: hsl(245, 20%, 12%);
+  --rich-brown: hsl(260, 25%, 10%);
+  --warm-parchment: hsl(210, 30%, 18%);
+  --old-paper: hsl(220, 15%, 22%);
+  --antique-gold: hsl(280, 65%, 60%);
+  --burnished-copper: hsl(320, 45%, 55%);
+  --faded-ink: hsl(240, 20%, 35%);
+  --dusty-rose: hsl(315, 35%, 55%);
+  --sage-green: hsl(160, 25%, 40%);
+  --cream-highlight: hsl(210, 25%, 85%);
 }
 
 .light {
   /* Light mode for contrast */
-  --background: hsl(46, 30%, 96%);
-  --foreground: hsl(20, 14%, 4%);
-  --muted: hsl(45, 20%, 92%);
-  --muted-foreground: hsl(25, 15%, 45%);
-  --popover: hsl(46, 30%, 96%);
-  --popover-foreground: hsl(20, 14%, 4%);
-  --card: hsl(46, 30%, 96%);
-  --card-foreground: hsl(20, 14%, 4%);
-  --border: hsl(20, 15%, 85%);
-  --input: hsl(20, 15%, 85%);
-  --primary: hsl(45, 60%, 45%);
-  --primary-foreground: hsl(46, 30%, 96%);
-  --secondary: hsl(45, 20%, 92%);
-  --secondary-foreground: hsl(20, 14%, 4%);
-  --accent: hsl(45, 20%, 92%);
-  --accent-foreground: hsl(20, 14%, 4%);
+  --background: hsl(210, 30%, 96%);
+  --foreground: hsl(240, 25%, 5%);
+  --muted: hsl(220, 20%, 92%);
+  --muted-foreground: hsl(240, 15%, 45%);
+  --popover: hsl(210, 30%, 96%);
+  --popover-foreground: hsl(240, 25%, 5%);
+  --card: hsl(210, 30%, 96%);
+  --card-foreground: hsl(240, 25%, 5%);
+  --border: hsl(240, 15%, 85%);
+  --input: hsl(240, 15%, 85%);
+  --primary: hsl(280, 65%, 45%);
+  --primary-foreground: hsl(210, 30%, 96%);
+  --secondary: hsl(220, 20%, 92%);
+  --secondary-foreground: hsl(240, 25%, 5%);
+  --accent: hsl(220, 20%, 92%);
+  --accent-foreground: hsl(240, 25%, 5%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(60, 9%, 98%);
-  --ring: hsl(45, 60%, 45%);
+  --ring: hsl(280, 65%, 45%);
 
   /* Light mode custom colors */
-  --deep-charcoal: hsl(46, 30%, 96%);
-  --charcoal: hsl(45, 20%, 92%);
-  --rich-brown: hsl(25, 20%, 85%);
-  --warm-parchment: hsl(46, 25%, 90%);
-  --old-paper: hsl(45, 15%, 88%);
-  --antique-gold: hsl(45, 60%, 45%);
-  --burnished-copper: hsl(25, 45%, 35%);
-  --faded-ink: hsl(220, 15%, 25%);
-  --dusty-rose: hsl(15, 25%, 45%);
-  --sage-green: hsl(85, 20%, 30%);
-  --cream-highlight: hsl(20, 14%, 4%);
+  --deep-charcoal: hsl(210, 30%, 96%);
+  --charcoal: hsl(220, 20%, 92%);
+  --rich-brown: hsl(240, 20%, 85%);
+  --warm-parchment: hsl(210, 25%, 90%);
+  --old-paper: hsl(220, 15%, 88%);
+  --antique-gold: hsl(280, 65%, 45%);
+  --burnished-copper: hsl(320, 45%, 35%);
+  --faded-ink: hsl(240, 20%, 25%);
+  --dusty-rose: hsl(315, 35%, 45%);
+  --sage-green: hsl(160, 25%, 30%);
+  --cream-highlight: hsl(210, 25%, 95%);
 }
 
 @layer base {
@@ -86,9 +86,9 @@
     @apply font-serif antialiased bg-background text-foreground;
     font-family: 'Crimson Text', Georgia, serif;
     background-image: 
-      radial-gradient(circle at 25% 25%, hsl(45, 60%, 55%, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, hsl(25, 45%, 45%, 0.02) 0%, transparent 50%),
-      linear-gradient(180deg, transparent 0%, hsl(20, 14%, 4%, 0.8) 100%);
+      radial-gradient(circle at 25% 25%, hsl(280, 65%, 60%, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(320, 45%, 55%, 0.02) 0%, transparent 50%),
+      linear-gradient(180deg, transparent 0%, hsl(240, 25%, 5%, 0.8) 100%);
     background-attachment: fixed;
   }
 
@@ -100,16 +100,16 @@
 @layer components {
   .parchment-texture {
     background-image: 
-      radial-gradient(circle at 20% 50%, hsla(45, 60%, 55%, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsla(25, 45%, 45%, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 40% 80%, hsla(45, 60%, 55%, 0.02) 0%, transparent 50%);
+      radial-gradient(circle at 20% 50%, hsla(280, 65%, 60%, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsla(320, 45%, 55%, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, hsla(280, 65%, 60%, 0.02) 0%, transparent 50%);
   }
 
   .vintage-paper {
     background-image: 
-      radial-gradient(circle at 10% 20%, hsla(45, 60%, 55%, 0.08) 0%, transparent 30%),
-      radial-gradient(circle at 90% 80%, hsla(25, 45%, 45%, 0.05) 0%, transparent 40%),
-      linear-gradient(135deg, transparent 0%, hsla(45, 60%, 55%, 0.02) 50%, transparent 100%),
+      radial-gradient(circle at 10% 20%, hsla(280, 65%, 60%, 0.08) 0%, transparent 30%),
+      radial-gradient(circle at 90% 80%, hsla(320, 45%, 55%, 0.05) 0%, transparent 40%),
+      linear-gradient(135deg, transparent 0%, hsla(280, 65%, 60%, 0.02) 50%, transparent 100%),
       url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8860b' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-color: var(--warm-parchment);
   }
@@ -121,7 +121,7 @@
     right: -10px;
     width: 30px;
     height: 30px;
-    background: radial-gradient(circle, hsla(45, 60%, 55%, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, hsla(280, 65%, 60%, 0.1) 0%, transparent 70%);
     border-radius: 50%;
   }
 
@@ -197,9 +197,9 @@
 
   .glow {
     box-shadow: 
-      0 0 20px hsla(45, 60%, 55%, 0.3),
-      0 0 40px hsla(45, 60%, 55%, 0.2),
-      0 0 60px hsla(45, 60%, 55%, 0.1);
+      0 0 20px hsla(280, 65%, 60%, 0.3),
+      0 0 40px hsla(280, 65%, 60%, 0.2),
+      0 0 60px hsla(280, 65%, 60%, 0.1);
     transform: translateY(-2px);
   }
 

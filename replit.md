@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a full-stack web application for a writer's portfolio website. The application showcases a professional writer's work, including copywriting, poetry, scripting, and creative strategy. It features a modern, elegant design with a "dark academia" aesthetic and includes a contact form for potential clients to reach out.
+This is a full-stack web application for Vrunda Mundhra's writer portfolio website. The application showcases her professional writing work across multiple disciplines including copywriting, poetry, scripting, personal essays, and creative strategy. It features an immersive dark academia aesthetic with atmospheric design elements, advanced animations, and interactive features that create a sophisticated, library-like experience.
 
 ## User Preferences
 
@@ -24,9 +24,16 @@ The application follows a monolithic full-stack architecture with clear separati
 - **React Router**: Uses Wouter for lightweight client-side routing
 - **State Management**: React Query (@tanstack/react-query) for server state management
 - **UI Components**: shadcn/ui component library built on Radix UI primitives
-- **Styling**: Tailwind CSS with custom CSS variables for theming
-- **Animation**: Framer Motion for smooth animations and transitions
+- **Styling**: Tailwind CSS with extensive custom CSS variables for dark academia theming
+- **Animation**: Framer Motion for sophisticated animations, typewriter effects, and interactive elements
 - **Form Handling**: React Hook Form with Zod validation
+- **Advanced Features**: 
+  - Reading progress indicator
+  - Cursor trail effects
+  - Typewriter text animations
+  - Portfolio modal system
+  - Theme toggle (dark/light modes)
+  - Scroll-to-top functionality
 
 ### Backend Architecture
 - **Express Server**: RESTful API with middleware for logging and error handling
@@ -87,3 +94,32 @@ The application is designed for simple deployment with the following approach:
    - Production: Optimized builds with static file serving
 
 The architecture supports easy scaling by separating the storage layer and using environment-based configuration for different deployment targets.
+
+## Recent Changes (January 30, 2025)
+
+### Dark Academia Transformation
+- **Complete Color Palette Overhaul**: Implemented authentic dark academia colors including deep charcoal, warm parchment, antique gold, and burnished copper
+- **Typography Enhancement**: Added Playfair Display and Crimson Text fonts for elegant serif typography
+- **Theme System**: Implemented comprehensive light/dark theme toggle with proper CSS variable management
+- **Visual Textures**: Added vintage paper textures, manuscript borders, and parchment effects
+
+### Advanced Interactive Features
+- **Reading Progress Bar**: Real-time scroll progress indicator with gradient styling
+- **Cursor Trail Effects**: Animated particle trail following mouse movement
+- **Typewriter Animations**: Dynamic text typing effects in hero section
+- **Portfolio Modal System**: Detailed project view with expanded information, metadata, and external links
+- **Scroll-to-Top Button**: Smooth animated scroll functionality
+- **Enhanced Navigation**: Theme toggle integration and improved mobile experience
+
+### User Experience Improvements
+- **Atmospheric Background**: Library-themed imagery with dark academia overlays
+- **Floating Elements**: Subtle animated book and feather icons
+- **Glow Effects**: Hover states with golden glow animations
+- **Enhanced Forms**: Dark-themed form inputs with proper contrast and accessibility
+- **Responsive Design**: Optimized for all device sizes with dark academia consistency
+
+### Technical Enhancements
+- **CSS Architecture**: Comprehensive custom utility classes for dark academia elements
+- **Animation Library**: Advanced Framer Motion implementations for smooth interactions
+- **Component Organization**: Modular approach with dedicated components for each advanced feature
+- **Performance Optimization**: Efficient scroll listeners and animation management

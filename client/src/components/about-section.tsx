@@ -10,7 +10,7 @@ export function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-20 bg-parchment parchment-texture">
+    <section id="about" className="py-20 bg-warm-parchment vintage-paper">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -20,11 +20,11 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-rich-brown mb-6">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-cream-highlight mb-6">
               The Writer's Journey
             </h2>
             
-            <div className="prose prose-lg text-rich-brown font-serif leading-relaxed space-y-4">
+            <div className="prose prose-lg text-cream-highlight/90 font-serif leading-relaxed space-y-4">
               <p>
                 In the quiet corners of libraries and the dim glow of late-night writing sessions, I discovered my voice. I am Vrunda Mundhra, a writer who believes that words are the most powerful tool we possess to connect, inspire, and transform.
               </p>
@@ -41,7 +41,7 @@ export function AboutSection() {
                 whileHover={{ scale: 1.05, x: 5 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection("#contact")}
-                className="inline-flex items-center text-antique-gold hover:text-copper transition-colors duration-300 font-semibold"
+                className="inline-flex items-center text-antique-gold hover:text-burnished-copper transition-colors duration-300 font-semibold"
               >
                 Let's collaborate
                 <ArrowRight size={16} className="ml-2" />

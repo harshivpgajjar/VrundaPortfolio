@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Footer() {
   return (
-    <footer className="bg-rich-brown text-warm-cream py-12">
+    <footer className="bg-rich-brown text-cream-highlight py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,11 +14,11 @@ export function Footer() {
           <div className="font-serif text-2xl font-semibold mb-4">
             Vrunda Mundhra
           </div>
-          <p className="text-warm-cream/80 mb-6 font-serif italic">
+          <p className="text-cream-highlight/80 mb-6 font-serif italic">
             "In every word lies the potential for connection, in every story the promise of understanding."
           </p>
-          <div className="border-t border-warm-cream/20 pt-6">
-            <p className="text-warm-cream/60 text-sm">
+          <div className="border-t border-cream-highlight/20 pt-6">
+            <p className="text-cream-highlight/60 text-sm">
               © 2024 Vrunda Mundhra. All rights reserved. | Crafted with intention and attention to detail.
             </p>
           </div>

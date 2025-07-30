@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { PortfolioModal } from "@/components/portfolio-modal";
 
 type Category = "all" | "copywriting" | "poetry" | "scripting" | "essays" | "strategy";
 
@@ -9,9 +10,14 @@ interface PortfolioItem {
   category: Category;
   title: string;
   description: string;
+  fullDescription?: string;
   image: string;
   type: string;
   typeColor: string;
+  date?: string;
+  client?: string;
+  tags?: string[];
+  link?: string;
 }
 
 const portfolioItems: PortfolioItem[] = [
@@ -20,9 +26,14 @@ const portfolioItems: PortfolioItem[] = [
     category: "copywriting",
     title: "Brand Storytelling Campaign",
     description: "A comprehensive brand narrative that increased engagement by 340% and established emotional connection with target audience.",
+    fullDescription: "This comprehensive brand storytelling campaign transformed how the client connected with their audience. Through careful research and strategic narrative development, we crafted a multi-touchpoint story that resonated deeply with their target demographic. The campaign resulted in a 340% increase in engagement, 25% boost in brand recognition, and established a lasting emotional connection that continues to drive customer loyalty.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
     type: "Copywriting",
-    typeColor: "text-antique-gold"
+    typeColor: "text-antique-gold",
+    date: "November 2024",
+    client: "Artisan Collective",
+    tags: ["Brand Strategy", "Copywriting", "Digital Marketing"],
+    link: "#"
   },
   {
     id: "2",
@@ -82,13 +93,25 @@ const categories = [
 
 export function PortfolioSection() {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
+  const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredItems = portfolioItems.filter(
     item => activeCategory === "all" || item.category === activeCategory
   );
 
+  const handleItemClick = (item: PortfolioItem) => {
+    setSelectedItem(item);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedItem(null);
+  };
+
   return (
-    <section id="portfolio" className="py-20 bg-warm-cream">
+    <section id="portfolio" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -97,10 +120,10 @@ export function PortfolioSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-rich-brown mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
             Portfolio of Words
           </h2>
-          <p className="text-lg text-rich-brown/80 max-w-2xl mx-auto font-serif">
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-serif">
             A curated collection of my work across different mediums and genres
           </p>
         </motion.div>
@@ -121,8 +144,8 @@ export function PortfolioSection() {
               onClick={() => setActiveCategory(category.id)}
               className={`px-6 py-2 font-semibold rounded-full transition-all duration-300 ${
                 activeCategory === category.id
-                  ? "bg-antique-gold text-rich-brown shadow-lg"
-                  : "bg-rich-brown/10 text-rich-brown hover:bg-rich-brown/20"
+                  ? "bg-antique-gold text-deep-charcoal shadow-lg glow"
+                  : "bg-warm-parchment text-foreground hover:bg-old-paper"
               }`}
             >
               {category.label}
@@ -146,8 +169,9 @@ export function PortfolioSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
                 className="group cursor-pointer"
+                onClick={() => handleItemClick(item)}
               >
-                <div className="bg-parchment rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative">
+                <div className="bg-warm-parchment vintage-paper rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative manuscript-border">
                   <div className="relative overflow-hidden">
                     <img
                       src={item.image}
@@ -161,13 +185,13 @@ export function PortfolioSection() {
                     <span className={`text-xs uppercase tracking-wide font-semibold ${item.typeColor}`}>
                       {item.type}
                     </span>
-                    <h3 className="font-serif text-xl font-semibold text-rich-brown mt-2 mb-3">
+                    <h3 className="font-serif text-xl font-semibold text-foreground mt-2 mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-rich-brown/80 text-sm leading-relaxed mb-4">
+                    <p className="text-foreground/80 text-sm leading-relaxed mb-4">
                       {item.description}
                     </p>
-                    <div className="flex items-center text-antique-gold text-sm font-semibold group-hover:text-copper transition-colors">
+                    <div className="flex items-center text-antique-gold text-sm font-semibold group-hover:text-burnished-copper transition-colors">
                       View Project
                       <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -178,6 +202,12 @@ export function PortfolioSection() {
           </AnimatePresence>
         </motion.div>
       </div>
+      
+      <PortfolioModal 
+        item={selectedItem}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </section>
   );
 }

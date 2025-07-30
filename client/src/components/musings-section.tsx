@@ -28,8 +28,8 @@ const blogPosts: BlogPost[] = [
 
 export function MusingsSection() {
   return (
-    <section id="musings" className="py-20 bg-rich-brown text-cream-highlight">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="musings" className="py-24 bg-rich-brown text-cream-highlight relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,10 +37,10 @@ export function MusingsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6">
             Musings & Reflections
           </h2>
-          <p className="text-lg text-cream-highlight/80 max-w-2xl mx-auto font-serif">
+          <p className="text-xl text-cream-highlight/80 max-w-3xl mx-auto font-serif">
             Free-flowing thoughts, latest pieces, and contemplations on the craft of writing
           </p>
         </motion.div>
@@ -54,7 +54,7 @@ export function MusingsSection() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="bg-cream-highlight/5 backdrop-blur-sm rounded-lg p-8 hover:bg-cream-highlight/10 transition-all duration-300 cursor-pointer group manuscript-border"
+              className="glass-effect rounded-2xl p-10 hover:bg-cream-highlight/10 transition-all duration-300 cursor-pointer group manuscript-border elegant-shadow hover:elegant-shadow-lg"
             >
               <div className="flex items-center text-sm text-antique-gold mb-4">
                 <time>{post.date}</time>
@@ -65,17 +65,17 @@ export function MusingsSection() {
                 </div>
               </div>
               
-              <h3 className="font-serif text-xl font-semibold mb-4 group-hover:text-antique-gold transition-colors">
+              <h3 className="font-serif text-2xl font-bold mb-6 group-hover:text-antique-gold transition-colors">
                 {post.title}
               </h3>
               
-              <p className="text-cream-highlight/80 leading-relaxed mb-6">
+              <p className="text-cream-highlight/80 leading-relaxed mb-8 text-lg">
                 {post.excerpt}
               </p>
               
               <motion.div
                 whileHover={{ x: 5 }}
-                className="inline-flex items-center text-antique-gold hover:text-burnished-copper transition-colors font-semibold"
+                className="inline-flex items-center text-antique-gold hover:text-burnished-copper transition-colors font-semibold bg-antique-gold/10 px-4 py-2 rounded-full"
               >
                 Continue reading
                 <ArrowRight size={16} className="ml-2" />
@@ -94,7 +94,7 @@ export function MusingsSection() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center bg-antique-gold hover:bg-antique-gold/90 text-deep-charcoal px-8 py-3 font-semibold transition-all duration-300 gap-2 hover:glow"
+            className="inline-flex items-center bg-antique-gold hover:bg-antique-gold/90 text-deep-charcoal px-10 py-4 font-semibold transition-all duration-300 gap-2 hover:glow rounded-full elegant-shadow text-lg"
           >
             View All Musings
             <ArrowRight size={16} />

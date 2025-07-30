@@ -39,7 +39,7 @@ export function Navigation() {
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? "bg-background/90 backdrop-blur-md border-b border-antique-gold/20 shadow-lg" 
+          ? "glass-effect border-b border-antique-gold/20 elegant-shadow" 
           : "bg-transparent"
       }`}
     >
@@ -107,7 +107,7 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-md border-t border-antique-gold/20"
+            className="md:hidden glass-effect border-t border-antique-gold/20 elegant-shadow"
           >
             <div className="px-4 py-4 space-y-4">
               {navItems.map((item) => (

@@ -87,7 +87,9 @@
     font-family: 'Crimson Text', Georgia, serif;
     background-image: 
       radial-gradient(circle at 25% 25%, hsl(45, 60%, 55%, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, hsl(25, 45%, 45%, 0.02) 0%, transparent 50%);
+      radial-gradient(circle at 75% 75%, hsl(25, 45%, 45%, 0.02) 0%, transparent 50%),
+      linear-gradient(180deg, transparent 0%, hsl(20, 14%, 4%, 0.8) 100%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -107,7 +109,8 @@
     background-image: 
       radial-gradient(circle at 10% 20%, hsla(45, 60%, 55%, 0.08) 0%, transparent 30%),
       radial-gradient(circle at 90% 80%, hsla(25, 45%, 45%, 0.05) 0%, transparent 40%),
-      linear-gradient(135deg, transparent 0%, hsla(45, 60%, 55%, 0.02) 50%, transparent 100%);
+      linear-gradient(135deg, transparent 0%, hsla(45, 60%, 55%, 0.02) 50%, transparent 100%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8860b' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-color: var(--warm-parchment);
   }
   
@@ -124,17 +127,38 @@
 
   .manuscript-border {
     border: 2px solid var(--antique-gold);
-    border-radius: 8px;
+    border-radius: 12px;
     position: relative;
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .manuscript-border::before {
     content: '';
     position: absolute;
-    inset: 8px;
+    inset: 12px;
     border: 1px solid var(--burnished-copper);
-    border-radius: 4px;
-    opacity: 0.3;
+    border-radius: 6px;
+    opacity: 0.4;
+  }
+
+  .manuscript-border::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, var(--antique-gold), var(--burnished-copper));
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .manuscript-border:hover::after {
+    opacity: 0.2;
   }
   
   .parallax {
@@ -172,7 +196,29 @@
   }
 
   .glow {
-    box-shadow: 0 0 20px var(--antique-gold), 0 0 40px var(--antique-gold), 0 0 60px var(--antique-gold);
+    box-shadow: 
+      0 0 20px hsla(45, 60%, 55%, 0.3),
+      0 0 40px hsla(45, 60%, 55%, 0.2),
+      0 0 60px hsla(45, 60%, 55%, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .elegant-shadow {
+    box-shadow: 
+      0 10px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .elegant-shadow-lg {
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   /* Custom Color Classes */
@@ -203,4 +249,13 @@
   .border-antique-gold { border-color: var(--antique-gold); }
   .border-burnished-copper { border-color: var(--burnished-copper); }
   .border-warm-parchment { border-color: var(--warm-parchment); }
+
+  /* Additional gradient utilities */
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+  
+  .hover\\:scale-\\[1\\.02\\]:hover {
+    transform: scale(1.02);
+  }
 }

@@ -111,8 +111,8 @@ export function PortfolioSection() {
   };
 
   return (
-    <section id="portfolio" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="py-24 bg-background relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,10 +120,10 @@ export function PortfolioSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
             Portfolio of Words
           </h2>
-          <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-serif">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto font-serif">
             A curated collection of my work across different mediums and genres
           </p>
         </motion.div>
@@ -142,10 +142,10 @@ export function PortfolioSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-2 font-semibold rounded-full transition-all duration-300 ${
+              className={`px-8 py-3 font-semibold rounded-full transition-all duration-300 text-lg ${
                 activeCategory === category.id
-                  ? "bg-antique-gold text-deep-charcoal shadow-lg glow"
-                  : "bg-warm-parchment text-foreground hover:bg-old-paper"
+                  ? "bg-antique-gold text-deep-charcoal elegant-shadow glow"
+                  : "bg-warm-parchment text-foreground hover:bg-old-paper elegant-shadow-lg border border-antique-gold/20"
               }`}
             >
               {category.label}
@@ -171,7 +171,7 @@ export function PortfolioSection() {
                 className="group cursor-pointer"
                 onClick={() => handleItemClick(item)}
               >
-                <div className="bg-warm-parchment vintage-paper rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative manuscript-border">
+                <div className="bg-warm-parchment vintage-paper rounded-2xl elegant-shadow hover:elegant-shadow-lg transition-all duration-300 overflow-hidden relative manuscript-border group-hover:scale-[1.02]">
                   <div className="relative overflow-hidden">
                     <img
                       src={item.image}
@@ -185,13 +185,13 @@ export function PortfolioSection() {
                     <span className={`text-xs uppercase tracking-wide font-semibold ${item.typeColor}`}>
                       {item.type}
                     </span>
-                    <h3 className="font-serif text-xl font-semibold text-foreground mt-2 mb-3">
+                    <h3 className="font-serif text-2xl font-bold text-foreground mt-3 mb-4">
                       {item.title}
                     </h3>
-                    <p className="text-foreground/80 text-sm leading-relaxed mb-4">
+                    <p className="text-foreground/80 text-base leading-relaxed mb-6">
                       {item.description}
                     </p>
-                    <div className="flex items-center text-antique-gold text-sm font-semibold group-hover:text-burnished-copper transition-colors">
+                    <div className="flex items-center text-antique-gold text-base font-semibold group-hover:text-burnished-copper transition-colors bg-antique-gold/10 px-4 py-2 rounded-full">
                       View Project
                       <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>

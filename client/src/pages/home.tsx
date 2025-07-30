@@ -8,10 +8,12 @@ import { Footer } from "@/components/footer";
 import { ReadingProgress } from "@/components/reading-progress";
 import { CursorTrail } from "@/components/cursor-trail";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { BackgroundElements } from "@/components/background-elements";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground scroll-smooth">
+    <div className="min-h-screen bg-background text-foreground scroll-smooth relative">
+      <BackgroundElements />
       <ReadingProgress />
       <CursorTrail />
       <Navigation />

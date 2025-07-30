@@ -67,7 +67,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="font-serif text-lg md:text-xl text-cream-highlight/90 italic mb-8 max-w-2xl mx-auto leading-relaxed manuscript-border p-6 bg-charcoal/30 backdrop-blur-sm"
+          className="font-serif text-lg md:text-xl text-cream-highlight/90 italic mb-12 max-w-3xl mx-auto leading-relaxed manuscript-border p-8 glass-effect elegant-shadow"
         >
           "Every word is a door, every sentence a hallway leading to the infinite chambers of human experience."
         </motion.blockquote>
@@ -76,13 +76,13 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection("#portfolio")}
-            className="bg-antique-gold hover:bg-antique-gold/90 text-deep-charcoal px-8 py-3 font-semibold transition-all duration-300 hover:shadow-lg hover:glow flex items-center justify-center gap-2"
+            className="bg-antique-gold hover:bg-antique-gold/90 text-deep-charcoal px-10 py-4 font-semibold transition-all duration-300 hover:glow flex items-center justify-center gap-2 rounded-full elegant-shadow text-lg"
           >
             Explore My Work
             <ArrowRight size={20} />
@@ -92,7 +92,7 @@ export function HeroSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection("#about")}
-            className="border-2 border-cream-highlight text-cream-highlight hover:bg-cream-highlight hover:text-deep-charcoal px-8 py-3 font-semibold transition-all duration-300"
+            className="border-2 border-cream-highlight text-cream-highlight hover:bg-cream-highlight hover:text-deep-charcoal px-10 py-4 font-semibold transition-all duration-300 rounded-full glass-effect text-lg"
           >
             About My Journey
           </motion.button>

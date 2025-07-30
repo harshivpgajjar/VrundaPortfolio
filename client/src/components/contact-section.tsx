@@ -61,8 +61,8 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-warm-parchment vintage-paper">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 bg-warm-parchment vintage-paper relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,10 +70,10 @@ export function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-cream-highlight mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-cream-highlight mb-6">
             Let's Create Something Beautiful
           </h2>
-          <p className="text-lg text-cream-highlight/80 max-w-2xl mx-auto font-serif">
+          <p className="text-xl text-cream-highlight/80 max-w-3xl mx-auto font-serif">
             Whether you need compelling copy, thoughtful strategy, or simply want to discuss the craft of writing
           </p>
         </motion.div>
@@ -85,7 +85,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-background rounded-lg p-8 shadow-lg manuscript-border"
+            className="bg-background rounded-2xl p-10 elegant-shadow-lg manuscript-border glass-effect"
           >
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

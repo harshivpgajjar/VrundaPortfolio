@@ -262,8 +262,8 @@ export function Work() {
                                 <img 
                                   src={project.thumbnail}
                                   alt={project.title}
-                                  className={`w-full object-cover group-hover:scale-105 transition-transform duration-300 ${
-                                    project.thumbnail === nightShiftPoster ? 'aspect-[3/4] h-96' : 'aspect-video'
+                                  className={`w-full object-contain group-hover:scale-105 transition-transform duration-300 ${
+                                    project.thumbnail === nightShiftPoster ? 'h-auto max-h-[600px]' : 'aspect-video object-cover'
                                   }`}
                                 />
                                 <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

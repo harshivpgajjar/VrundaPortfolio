@@ -41,16 +41,7 @@ const workCategories = [
       }
     ]
   },
-  {
-    title: "COPYWRITING",
-    description: "Strategic brand messaging and persuasive content that drives action and engagement across digital platforms.",
-    projects: [
-      "Brand Voice Development",
-      "Website Copy",
-      "Social Media Content",
-      "Email Campaigns"
-    ]
-  },
+
   {
     title: "STORYTELLING", 
     description: "Authentic narratives that connect with audiences through compelling personal and brand stories.",
@@ -65,10 +56,11 @@ const workCategories = [
     title: "SCRIPTWRITING",
     description: "Visual storytelling through scripts for various media formats and digital content.",
     projects: [
-      "Video Scripts",
-      "Podcast Scripts",
-      "Social Media Scripts",
-      "Presentation Content"
+      {
+        title: "Script Sample",
+        driveUrl: "https://drive.google.com/file/d/1sYMvXaoEqE-MfPKjkmuI9TrzFvfXoTYm/view?usp=sharing",
+        type: "document"
+      }
     ]
   },
   {
@@ -89,7 +81,6 @@ export function Work() {
   const categories = [
     "SHORT FILM",
     "YOUTUBE SCRIPTS FOR KOTAK 811", 
-    "COPYWRITING",
     "STORYTELLING",
     "SCRIPTWRITING", 
     "CREATIVE STRATEGY"
@@ -214,7 +205,7 @@ export function Work() {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {getActiveCategory()?.projects.map((project, projectIndex) => (
                       <div key={projectIndex}>
-                        {typeof project === 'object' && project !== null && 'type' in project && project.type === 'video' ? (
+                        {typeof project === 'object' && project !== null && 'type' in project && project.type === 'video' && 'videoUrl' in project && 'thumbnail' in project ? (
                           <a 
                             href={project.videoUrl}
                             target="_blank"
@@ -248,7 +239,7 @@ export function Work() {
                   <>
                     {getActiveCategory()?.projects.map((project, projectIndex) => (
                       <div key={projectIndex}>
-                        {typeof project === 'object' && project !== null && 'type' in project && project.type === 'video' ? (
+                        {typeof project === 'object' && project !== null && 'type' in project && project.type === 'video' && 'videoUrl' in project && 'thumbnail' in project ? (
                           // Single video project with large thumbnail
                           <div className="max-w-lg mx-auto">
                             <a 
@@ -278,6 +269,29 @@ export function Work() {
                               </div>
                             </a>
                           </div>
+                        ) : typeof project === 'object' && project !== null && 'type' in project && project.type === 'document' && 'driveUrl' in project ? (
+                          // Document project with Google Drive link
+                          <div className="max-w-lg mx-auto">
+                            <a 
+                              href={project.driveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block group"
+                            >
+                              <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 p-12 bg-gray-50 hover:bg-gray-100">
+                                <div className="flex items-center justify-center">
+                                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
+                                    <svg className="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="mt-4 text-center font-mono text-sm text-gray-600 hover:text-black transition-colors">
+                                → {typeof project === 'object' && project !== null && 'title' in project ? project.title : 'Document'}
+                              </div>
+                            </a>
+                          </div>
                         ) : (
                           // Regular text project
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -292,8 +306,8 @@ export function Work() {
                 )}
               </div>
 
-              {/* Only show VIEW SAMPLES link for non-video categories */}
-              {!getActiveCategory()?.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && p.type === 'video') && (
+              {/* Only show VIEW SAMPLES link for non-video and non-document categories */}
+              {!getActiveCategory()?.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && (p.type === 'video' || p.type === 'document')) && (
                 <div className="mt-8 pt-6 border-t border-gray-200 text-center">
                   <div className="font-mono text-sm text-gray-400">
                     VIEW SAMPLES →

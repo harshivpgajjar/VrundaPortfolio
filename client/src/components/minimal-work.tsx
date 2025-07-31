@@ -157,7 +157,7 @@ export function MinimalWork() {
                                 </div>
                                 <div className="flex-grow">
                                   <div className="font-mono text-xs text-gray-600 group-hover:text-black transition-colors">
-                                    → Campaign {projectIndex + 1}
+                                    → SCRIPT {projectIndex + 1}
                                   </div>
                                 </div>
                               </div>

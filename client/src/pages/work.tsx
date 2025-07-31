@@ -6,8 +6,9 @@ import nightShiftPoster from "@assets/poster_1753948710814.jpeg";
 import writingImage1 from "@assets/IMG-20250730-WA0181_1753946886344.jpg";
 import writingImage2 from "@assets/IMG-20250730-WA0183_1753946886349.jpg";
 import writingImage3 from "@assets/IMG-20250730-WA0185_1753946886350.jpg";
-import magazineImage from "@assets/image_1753950777887.png";
-import radioImage from "@assets/WhatsApp Image 2025-06-20 at 13.14.29_35d03867_1753950571946.jpg";
+import keepItInMindImage from "@assets/WhatsApp Image 2025-07-31 at 18.58.48_efd197d1_1753968750819.jpg";
+import surrealHandImage from "@assets/WhatsApp Image 2025-07-31 at 18.58.50_7aac5522_1753968750882.jpg";
+import artComfortImage from "@assets/WhatsApp Image 2025-07-31 at 18.58.49_0f453904_1753968750897.jpg";
 
 const workCategories = [
   {
@@ -110,7 +111,8 @@ const workCategories = [
       {
         title: "Article Collection",
         driveUrl: "https://drive.google.com/drive/folders/10Ydad-dmWgJkoMtVFEeTuIIQCSXR-j9k?usp=sharing",
-        type: "folder"
+        type: "folder",
+        thumbnail: keepItInMindImage
       }
     ]
   },
@@ -121,7 +123,8 @@ const workCategories = [
       {
         title: "College Magazine Project",
         driveUrl: "https://drive.google.com/drive/folders/1ONICeV1TFp4BXx4cuE4AdXdUaIK6C6QZ?usp=drive_link",
-        type: "folder"
+        type: "folder",
+        thumbnail: surrealHandImage
       }
     ]
   },
@@ -132,7 +135,8 @@ const workCategories = [
       {
         title: "College Radio Show",
         driveUrl: "https://drive.google.com/drive/folders/1K96qYOtl0uJz-zt5EM36Ix-KpJ0vPpdg?usp=sharing",
-        type: "folder"
+        type: "folder",
+        thumbnail: artComfortImage
       }
     ]
   }

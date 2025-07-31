@@ -23,12 +23,11 @@ export function MinimalNavigation() {
           </div>
           
           <div className="hidden md:flex space-x-8">
-            <button 
-              onClick={() => scrollToSection('work')}
-              className="font-mono text-sm hover:text-gray-600 transition-colors"
-            >
-              WORK
-            </button>
+            <Link href="/work">
+              <span className="font-mono text-sm hover:text-gray-600 transition-colors cursor-pointer">
+                WORK
+              </span>
+            </Link>
             <Link href="/blog">
               <span className="font-mono text-sm hover:text-gray-600 transition-colors cursor-pointer">
                 BLOG

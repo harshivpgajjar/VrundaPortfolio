@@ -27,11 +27,28 @@ export function MinimalAbout() {
         </motion.h2>
         
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Content Section */}
+          {/* Photo Section */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            <div className="relative">
+              <img 
+                src={profilePhoto} 
+                alt="Vrunda Mundhra"
+                className="w-80 h-80 object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </motion.div>
+
+          {/* Content Section */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
             className="space-y-8"
           >
@@ -64,23 +81,6 @@ export function MinimalAbout() {
                 see better. Only then will I be able to write better. For if I can't write what I feel, 
                 I can't feel what I write.
               </p>
-            </div>
-          </motion.div>
-
-          {/* Photo Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex justify-center"
-          >
-            <div className="relative">
-              <img 
-                src={profilePhoto} 
-                alt="Vrunda Mundhra"
-                className="w-80 h-80 object-cover rounded-lg shadow-lg"
-              />
             </div>
           </motion.div>
         </div>

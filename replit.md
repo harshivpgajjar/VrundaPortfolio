@@ -146,9 +146,9 @@ The architecture supports easy scaling by separating the storage layer and using
 
 ### Work Section Expansion (January 31, 2025)
 - **Comprehensive Categories**: Complete reorganization with 9 distinct work categories
-- **Professional Projects**: SHORT FILM, YOUTUBE SCRIPTS FOR KOTAK 811, PRESS RELEASE ARTICLES with publication logos
-- **Creative Work**: POETRY, STORYTELLING, SCRIPTWRITING with Google Drive integration
+- **Professional Projects**: SHORT FILM, YOUTUBE SCRIPTS FOR KOTAK 811, PRESS RELEASE ARTICLES with publication logos  
+- **Creative Work**: POETRY, STORIES FOR THE SOUL (FIRST DRAFTS), SCRIPTWRITING with Google Drive integration
 - **Academic Projects**: MAGAZINE (InDesign college project), RADIO PROJECT (15-min college show)
 - **Writing Portfolio**: BLOGS AND ARTICLES folder with comprehensive content collection
 - **Interactive Elements**: Video thumbnails, document icons, folder displays, and external link integration
-- **Navigation Updates**: Removed BLOG tab, consolidated content under work categories
+- **Navigation Updates**: Replaced STORYTELLING tab with "Stories for the soul (first drafts)" featuring authentic first draft work

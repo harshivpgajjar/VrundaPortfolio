@@ -44,12 +44,13 @@ const workCategories = [
 
   {
     title: "STORIES FOR THE SOUL (FIRST DRAFTS)", 
-    description: "Raw and authentic storytelling in its purest form - first drafts that capture genuine emotions and experiences.",
+    description: "Hum mein kayi kahaniya chhipi hai. Kuch humara hissa hai aur kuch ka hum banna chahte hai. In kahaniyo ke bal, maine bhi likhi hai kuch.",
     projects: [
-      "Personal Narratives",
-      "Emotional Stories",
-      "Life Experiences",
-      "Creative Reflections"
+      {
+        title: "Stories Collection",
+        driveUrl: "https://drive.google.com/drive/folders/1OpjFq_AV2F10rdPImYyaqbcYiLoVq-H_?usp=sharing",
+        type: "folder"
+      }
     ]
   },
   {

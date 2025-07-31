@@ -80,14 +80,14 @@ const workCategories = [
       {
         title: "AR Advertising: A Bold Bet for Brand Success",
         articleUrl: "https://archive.adgully.com/ar-advertising-a-bold-bet-for-brand-success-nirvi-jain-133036.html",
-        thumbnail: "https://archive.adgully.com/images/adgully-logo.png",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/AdGully_Logo.png/1200px-AdGully_Logo.png",
         type: "article",
         publication: "AdGully"
       },
       {
         title: "Harnessing the Power of AI: Transforming Marketing Efforts for Success",
         articleUrl: "https://timesofindia.indiatimes.com/blogs/voices/harnessing-the-power-of-ai-transforming-marketing-efforts-for-success/?source=app&frmapp=yes",
-        thumbnail: "https://static.toiimg.com/toi-logo-black.svg",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/The_Times_of_India.svg/1200px-The_Times_of_India.svg.png",
         type: "article",
         publication: "Times of India"
       }

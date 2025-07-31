@@ -76,8 +76,8 @@ export function MinimalContact() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="font-mono text-sm tracking-widest text-white mb-16">
-            CONNECT
+          <div className="font-mono text-3xl md:text-4xl font-bold tracking-widest text-white mb-16">
+            LET'S CONNECT
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
@@ -96,7 +96,7 @@ export function MinimalContact() {
               </div>
               <a 
                 href="mailto:vrunda.mundhra23@gmail.com"
-                className="font-mono text-xl md:text-2xl text-white hover:text-gray-300 transition-colors"
+                className="font-mono text-2xl md:text-3xl font-bold text-white hover:text-gray-300 transition-colors"
               >
                 vrunda.mundhra23@gmail.com
               </a>
@@ -117,7 +117,7 @@ export function MinimalContact() {
                 href="https://www.linkedin.com/in/vrundawrites/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xl md:text-2xl text-white hover:text-gray-300 transition-colors"
+                className="font-mono text-2xl md:text-3xl font-bold text-white hover:text-gray-300 transition-colors"
               >
                 linkedin.com/in/vrundawrites
               </a>
@@ -136,7 +136,7 @@ export function MinimalContact() {
               </div>
               <a 
                 href="tel:+918155022240"
-                className="font-mono text-xl md:text-2xl text-white hover:text-gray-300 transition-colors"
+                className="font-mono text-2xl md:text-3xl font-bold text-white hover:text-gray-300 transition-colors"
               >
                 +91 8155022240
               </a>
@@ -152,7 +152,7 @@ export function MinimalContact() {
               viewport={{ once: true }}
               className="bg-white/5 backdrop-blur-sm rounded-lg p-8 border border-white/10"
             >
-              <h3 className="font-mono text-xl font-bold mb-8 tracking-wider text-white">
+              <h3 className="font-mono text-3xl md:text-4xl font-bold mb-8 tracking-widest text-white">
                 SEND A MESSAGE
               </h3>
               
@@ -192,7 +192,6 @@ export function MinimalContact() {
                     required
                     rows={6}
                     className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-white/40 transition-colors resize-none"
-                    placeholder="Tell me about your project..."
                   />
                 </div>
                 

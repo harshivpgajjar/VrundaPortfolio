@@ -17,10 +17,10 @@ export function MinimalAbout() {
       />
       {/* Eyes Pattern Overlay */}
       <div 
-        className="absolute inset-0 bg-repeat opacity-8"
+        className="absolute top-20 right-20 w-32 h-32 opacity-15"
         style={{
           backgroundImage: `url(${eyesPattern})`,
-          backgroundSize: '150px 150px',
+          backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       />

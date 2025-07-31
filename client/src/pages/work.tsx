@@ -110,8 +110,7 @@ const workCategories = [
       {
         title: "Article Collection",
         driveUrl: "https://drive.google.com/drive/folders/10Ydad-dmWgJkoMtVFEeTuIIQCSXR-j9k?usp=sharing",
-        type: "folder",
-        thumbnail: writingImage1
+        type: "folder"
       }
     ]
   },

@@ -106,12 +106,13 @@ const workCategories = [
   },
   {
     title: "MAGAZINE",
-    description: "Magazine features and editorial content showcasing in-depth storytelling and journalistic writing.",
+    description: "I designed this magazine on InDesign for a third-year college project.",
     projects: [
-      "Feature Articles",
-      "Editorial Pieces",
-      "Interview Features",
-      "Column Writing"
+      {
+        title: "College Magazine Project",
+        driveUrl: "https://drive.google.com/drive/folders/1ONICeV1TFp4BXx4cuE4AdXdUaIK6C6QZ?usp=drive_link",
+        type: "folder"
+      }
     ]
   },
   {

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Link } from "wouter";
 import communicationCollage from "@assets/IMG-20250730-WA0182_1753946886348.jpg";
 import nightShiftPoster from "@assets/poster_1753948710814.jpeg";
 
@@ -100,8 +101,44 @@ export function Work() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <motion.nav 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <Link href="/">
+              <span className="font-mono text-sm font-bold tracking-wider cursor-pointer hover:text-gray-600 transition-colors">
+                VM
+              </span>
+            </Link>
+            
+            <div className="hidden md:flex space-x-8">
+              <Link href="/">
+                <span className="font-mono text-sm hover:text-gray-600 transition-colors cursor-pointer">
+                  HOME
+                </span>
+              </Link>
+              <Link href="/work">
+                <span className="font-mono text-sm text-black font-bold cursor-pointer">
+                  WORK
+                </span>
+              </Link>
+              <Link href="/blog">
+                <span className="font-mono text-sm hover:text-gray-600 transition-colors cursor-pointer">
+                  BLOG
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.nav>
+
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-12"
           style={{

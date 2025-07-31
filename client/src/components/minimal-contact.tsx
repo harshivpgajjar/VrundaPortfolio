@@ -80,139 +80,115 @@ export function MinimalContact() {
             LET'S CONNECT
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
-            {/* Contact Information */}
-            <div className="space-y-12">
-            {/* Email */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="flex items-center space-x-6 group"
-            >
-              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-300">
-                <Mail size={24} className="text-white" />
-              </div>
-              <a 
-                href="mailto:vrunda.mundhra23@gmail.com"
-                className="text-2xl md:text-3xl font-bold text-white hover:text-gray-300 transition-colors"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
-              >
-                vrunda.mundhra23@gmail.com
-              </a>
-            </motion.div>
-
-            {/* LinkedIn */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="flex items-center space-x-6 group"
-            >
-              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-300">
-                <Linkedin size={24} className="text-white" />
-              </div>
-              <a 
-                href="https://www.linkedin.com/in/vrundawrites/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl md:text-3xl font-bold text-white hover:text-gray-300 transition-colors"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
-              >
-                linkedin.com/in/vrundawrites
-              </a>
-            </motion.div>
-
-            {/* Phone */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="flex items-center space-x-6 group"
-            >
-              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-300">
-                <Phone size={24} className="text-white" />
-              </div>
-              <a 
-                href="tel:+918155022240"
-                className="text-2xl md:text-3xl font-bold text-white hover:text-gray-300 transition-colors"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
-              >
-                +91 8155022240
-              </a>
-            </motion.div>
-
-            </div>
-
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm rounded-lg p-8 border border-white/10"
-            >
-              <h3 className="text-3xl md:text-4xl font-bold mb-8 tracking-widest text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                SEND A MESSAGE
-              </h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="text-sm text-white mb-2 block" style={{ fontFamily: 'Montserrat, sans-serif' }}>NAME</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-white/40 transition-colors"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
-                    placeholder="Your full name"
-                  />
-                </div>
-                
-                <div>
-                  <label className="text-sm text-white mb-2 block" style={{ fontFamily: 'Montserrat, sans-serif' }}>EMAIL</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-white/40 transition-colors"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
-                    placeholder="your@email.com"
-                  />
-                </div>
-                
-                <div>
-                  <label className="text-sm text-white mb-2 block" style={{ fontFamily: 'Montserrat, sans-serif' }}>MESSAGE</label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={6}
-                    className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-white/40 transition-colors resize-none"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
-                  />
-                </div>
-                
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-white text-black text-sm font-bold py-3 px-6 rounded hover:bg-gray-200 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
+          {/* Contact Form - Centered */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-white/5 backdrop-blur-sm rounded-lg p-8 border border-white/10 max-w-2xl mx-auto mb-16"
+          >
+            <h3 className="text-3xl md:text-4xl font-bold mb-8 tracking-widest text-white text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              SEND A MESSAGE
+            </h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="text-sm text-white mb-2 block" style={{ fontFamily: 'Montserrat, sans-serif' }}>NAME</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-white/40 transition-colors"
                   style={{ fontFamily: 'Montserrat, sans-serif' }}
-                >
-                  <span>{isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}</span>
-                  <Send size={16} />
-                </button>
-              </form>
-            </motion.div>
-          </div>
+                  placeholder="Your full name"
+                />
+              </div>
+              
+              <div>
+                <label className="text-sm text-white mb-2 block" style={{ fontFamily: 'Montserrat, sans-serif' }}>EMAIL</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-white/40 transition-colors"
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                  placeholder="your@email.com"
+                />
+              </div>
+              
+              <div>
+                <label className="text-sm text-white mb-2 block" style={{ fontFamily: 'Montserrat, sans-serif' }}>MESSAGE</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  rows={6}
+                  className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-white/40 transition-colors resize-none"
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                />
+              </div>
+              
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-white text-black text-sm font-bold py-3 px-6 rounded hover:bg-gray-200 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
+                style={{ fontFamily: 'Montserrat, sans-serif' }}
+              >
+                <span>{isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}</span>
+                <Send size={16} />
+              </button>
+            </form>
+          </motion.div>
+
+          {/* Contact Icons - Below Message Box */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="flex justify-center space-x-12"
+          >
+            {/* Email Icon */}
+            <a 
+              href="mailto:vrunda.mundhra23@gmail.com"
+              className="group"
+              title="vrunda.mundhra23@gmail.com"
+            >
+              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
+                <Mail size={32} className="text-white" />
+              </div>
+            </a>
+
+            {/* LinkedIn Icon */}
+            <a 
+              href="https://www.linkedin.com/in/vrundawrites/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+              title="linkedin.com/in/vrundawrites"
+            >
+              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
+                <Linkedin size={32} className="text-white" />
+              </div>
+            </a>
+
+            {/* Phone Icon */}
+            <a 
+              href="tel:+918155022240"
+              className="group"
+              title="+91 8155022240"
+            >
+              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
+                <Phone size={32} className="text-white" />
+              </div>
+            </a>
+          </motion.div>
 
           <div className="pt-16 border-t border-white/20 mt-16">
             <p className="text-xs text-gray-400 text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>

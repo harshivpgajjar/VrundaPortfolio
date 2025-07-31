@@ -43,13 +43,13 @@ const workCategories = [
   },
 
   {
-    title: "STORYTELLING", 
-    description: "Authentic narratives that connect with audiences through compelling personal and brand stories.",
+    title: "STORIES FOR THE SOUL (FIRST DRAFTS)", 
+    description: "Raw and authentic storytelling in its purest form - first drafts that capture genuine emotions and experiences.",
     projects: [
-      "Personal Essays",
-      "Brand Narratives",
-      "Content Strategy",
-      "Editorial Features"
+      "Personal Narratives",
+      "Emotional Stories",
+      "Life Experiences",
+      "Creative Reflections"
     ]
   },
   {
@@ -135,7 +135,7 @@ export function Work() {
   const categories = [
     "SHORT FILM",
     "YOUTUBE SCRIPTS FOR KOTAK 811", 
-    "STORYTELLING",
+    "STORIES FOR THE SOUL (FIRST DRAFTS)",
     "SCRIPTWRITING", 
     "POETRY",
     "PRESS RELEASE ARTICLES",

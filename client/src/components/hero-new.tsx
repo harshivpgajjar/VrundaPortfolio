@@ -23,46 +23,51 @@ export function HeroNew() {
           {/* Text inside TV screen */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative" style={{ 
-              marginTop: '-5%', 
-              marginLeft: '5%',
-              width: '35%',
-              height: '30%'
+              marginTop: '-10%', 
+              marginLeft: '8%',
+              width: '30%',
+              height: '40%'
             }}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.5, delay: 1.5, ease: "easeOut" }}
-                className="text-center h-full flex flex-col justify-center"
+                className="text-center h-full flex flex-col justify-between"
               >
-                <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-black leading-tight font-bold">
-                  <div 
-                    style={{
-                      fontFamily: '"Playfair Display", "Georgia", serif',
-                      letterSpacing: '0.03em',
-                      fontWeight: '600',
-                    }}
-                  >
-                    Writer
-                  </div>
-                  <div 
-                    className="my-1"
-                    style={{
-                      fontFamily: '"Playfair Display", "Georgia", serif',
-                      letterSpacing: '0.03em',
-                      fontWeight: '600',
-                    }}
-                  >
-                    &
-                  </div>
-                  <div 
-                    style={{
-                      fontFamily: '"Playfair Display", "Georgia", serif',
-                      letterSpacing: '0.03em',
-                      fontWeight: '600',
-                    }}
-                  >
-                    Storyteller
-                  </div>
+                {/* WRITER at top */}
+                <div 
+                  className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-black font-bold"
+                  style={{
+                    fontFamily: '"Playfair Display", "Georgia", serif',
+                    letterSpacing: '0.03em',
+                    fontWeight: '700',
+                  }}
+                >
+                  WRITER
+                </div>
+                
+                {/* & in middle */}
+                <div 
+                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-black font-bold"
+                  style={{
+                    fontFamily: '"Playfair Display", "Georgia", serif',
+                    letterSpacing: '0.03em',
+                    fontWeight: '700',
+                  }}
+                >
+                  &
+                </div>
+                
+                {/* STORYTELLER at bottom */}
+                <div 
+                  className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-black font-bold"
+                  style={{
+                    fontFamily: '"Playfair Display", "Georgia", serif',
+                    letterSpacing: '0.03em',
+                    fontWeight: '700',
+                  }}
+                >
+                  STORYTELLER
                 </div>
               </motion.div>
             </div>

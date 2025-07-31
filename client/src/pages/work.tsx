@@ -92,6 +92,17 @@ const workCategories = [
         publication: "Times of India"
       }
     ]
+  },
+  {
+    title: "ARTICLES",
+    description: "A collection of articles and written content showcasing various topics and writing styles.",
+    projects: [
+      {
+        title: "Article Collection",
+        driveUrl: "https://drive.google.com/drive/folders/1W3WPCZmv2uKnEk0gK8jD8CyPdO2og7Xc?usp=sharing",
+        type: "folder"
+      }
+    ]
   }
 ];
 
@@ -104,7 +115,8 @@ export function Work() {
     "STORYTELLING",
     "SCRIPTWRITING", 
     "CREATIVE STRATEGY",
-    "PRESS RELEASE ARTICLES"
+    "PRESS RELEASE ARTICLES",
+    "ARTICLES"
   ];
 
   const getActiveCategory = () => {
@@ -348,6 +360,29 @@ export function Work() {
                               </div>
                             </a>
                           </div>
+                        ) : typeof project === 'object' && project !== null && 'type' in project && project.type === 'folder' && 'driveUrl' in project ? (
+                          // Folder project with Google Drive link
+                          <div className="max-w-lg mx-auto">
+                            <a 
+                              href={project.driveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block group"
+                            >
+                              <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 p-12 bg-gray-50 hover:bg-gray-100">
+                                <div className="flex items-center justify-center">
+                                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
+                                    <svg className="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="mt-4 text-center font-mono text-sm text-gray-600 hover:text-black transition-colors">
+                                → {typeof project === 'object' && project !== null && 'title' in project ? project.title : 'Folder'}
+                              </div>
+                            </a>
+                          </div>
                         ) : typeof project === 'object' && project !== null && 'type' in project && project.type === 'article' && 'articleUrl' in project ? (
                           // Article project with publication thumbnail
                           <div className="max-w-lg mx-auto">
@@ -405,8 +440,8 @@ export function Work() {
                 )}
               </div>
 
-              {/* Only show VIEW SAMPLES link for non-video, non-document, and non-article categories */}
-              {!getActiveCategory()?.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && (p.type === 'video' || p.type === 'document' || p.type === 'article')) && (
+              {/* Only show VIEW SAMPLES link for non-video, non-document, non-article, and non-folder categories */}
+              {!getActiveCategory()?.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && (p.type === 'video' || p.type === 'document' || p.type === 'article' || p.type === 'folder')) && (
                 <div className="mt-8 pt-6 border-t border-gray-200 text-center">
                   <div className="font-mono text-sm text-gray-400">
                     VIEW SAMPLES →

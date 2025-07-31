@@ -33,7 +33,7 @@ export function MinimalAbout() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex justify-center"
+            className="flex flex-col items-center"
           >
             <div className="relative">
               <img 
@@ -42,6 +42,9 @@ export function MinimalAbout() {
                 className="w-80 h-80 object-cover rounded-lg shadow-lg"
               />
             </div>
+            <p className="font-mono text-sm text-gray-600 mt-4 text-center italic max-w-80">
+              Appearances are deceptive, so I will let my work speak.
+            </p>
           </motion.div>
 
           {/* Content Section */}

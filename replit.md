@@ -95,31 +95,32 @@ The application is designed for simple deployment with the following approach:
 
 The architecture supports easy scaling by separating the storage layer and using environment-based configuration for different deployment targets.
 
-## Recent Changes (January 30, 2025)
+## Recent Changes (January 31, 2025)
 
-### Dark Academia Transformation
-- **Complete Color Palette Overhaul**: Implemented authentic dark academia colors including deep charcoal, warm parchment, antique gold, and burnished copper
-- **Typography Enhancement**: Added Playfair Display and Crimson Text fonts for elegant serif typography
-- **Theme System**: Implemented comprehensive light/dark theme toggle with proper CSS variable management
-- **Visual Textures**: Added vintage paper textures, manuscript borders, and parchment effects
+### Complete Design Transformation to Minimal Experimental Style
+- **Template Redesign**: Complete transformation from dark academia to minimal experimental design inspired by eloyb.design
+- **Typography Overhaul**: Switched to monospace fonts with ASCII-style vertical text layouts
+- **Color Scheme**: Changed from midnight academia to clean black/white minimal aesthetic
+- **Layout Structure**: Implemented ultra-minimal design with lots of white space and experimental typography
+- **Personal Information Integration**: Added Vrunda Mundhra's professional details, contact information, and mission statement
 
-### Advanced Interactive Features
-- **Reading Progress Bar**: Real-time scroll progress indicator with gradient styling
-- **Cursor Trail Effects**: Animated particle trail following mouse movement
-- **Typewriter Animations**: Dynamic text typing effects in hero section
-- **Portfolio Modal System**: Detailed project view with expanded information, metadata, and external links
-- **Scroll-to-Top Button**: Smooth animated scroll functionality
-- **Enhanced Navigation**: Theme toggle integration and improved mobile experience
+### New Component Architecture
+- **MinimalHero**: Clean hero section with vertical ASCII-style text treatment and personal bio
+- **MinimalNavigation**: Simple fixed navigation with monospace typography
+- **MinimalWork**: Work categories displayed in grid format with project listings
+- **MinimalAbout**: Structured about section with expertise and approach details
+- **MinimalContact**: Clean contact section with email interaction and copy functionality
 
-### User Experience Improvements
-- **Atmospheric Background**: Library-themed imagery with dark academia overlays
-- **Floating Elements**: Subtle animated book and feather icons
-- **Glow Effects**: Hover states with golden glow animations
-- **Enhanced Forms**: Dark-themed form inputs with proper contrast and accessibility
-- **Responsive Design**: Optimized for all device sizes with dark academia consistency
+### Content Integration
+- **Professional Title**: "Writer and Storyteller"
+- **Contact Email**: vrunda.mundhra23@gmail.com
+- **Mission Statement**: Comprehensive bio highlighting Mass Media background and storytelling expertise
+- **Work Categories**: Organized into Copywriting, Storytelling, Scriptwriting, and Creative Strategy
+- **Expertise Areas**: Writing, Digital Media, Strategic Communication focus
 
-### Technical Enhancements
-- **CSS Architecture**: Comprehensive custom utility classes for dark academia elements
-- **Animation Library**: Advanced Framer Motion implementations for smooth interactions
-- **Component Organization**: Modular approach with dedicated components for each advanced feature
-- **Performance Optimization**: Efficient scroll listeners and animation management
+### User Experience Features
+- **Smooth Scrolling**: Navigation between sections with smooth scroll behavior
+- **Interactive Elements**: Hover effects on work items and buttons
+- **Email Functionality**: Direct mailto links and copy-to-clipboard functionality
+- **Responsive Design**: Mobile-optimized minimal layout
+- **Clean Animations**: Subtle fade-in animations using Framer Motion

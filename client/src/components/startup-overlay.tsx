@@ -42,73 +42,199 @@ export function StartupOverlay({ onClose }: StartupOverlayProps) {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative bg-gray-200 border-2 border-gray-400 shadow-2xl max-w-sm sm:max-w-md w-full mx-4"
+              className="relative max-w-sm sm:max-w-lg w-full mx-4"
               style={{
-                boxShadow: "inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.7)"
+                backgroundColor: '#c0c0c0',
+                border: '2px outset #c0c0c0',
+                boxShadow: "2px 2px 10px rgba(0,0,0,0.8)"
               }}
             >
-              {/* Window Title Bar */}
-              <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white px-2 sm:px-3 py-1 text-xs sm:text-sm font-bold flex items-center justify-between border-b border-gray-400">
-                <span className="truncate">Vrunda Mundhra - Portfolio</span>
-                <div className="flex space-x-1 flex-shrink-0 ml-2">
-                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gray-300 rounded-sm"></div>
-                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gray-300 rounded-sm"></div>
-                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-sm"></div>
+              {/* Window Title Bar - Classic Windows 95/98 Style */}
+              <div 
+                className="text-white px-2 py-1 text-xs font-bold flex items-center justify-between"
+                style={{
+                  background: 'linear-gradient(90deg, #0080c0 0%, #0070b0 50%, #0080c0 100%)',
+                  height: '18px',
+                  fontSize: '11px',
+                  fontFamily: 'MS Sans Serif, sans-serif'
+                }}
+              >
+                <div className="flex items-center space-x-1">
+                  <div 
+                    className="w-4 h-4 flex items-center justify-center"
+                    style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+                  >
+                    <div className="w-2 h-2 bg-white opacity-80"></div>
+                  </div>
+                  <span className="truncate">Vrunda Mundhra - Portfolio</span>
+                </div>
+                <div className="flex space-x-0">
+                  {/* Minimize Button */}
+                  <div 
+                    className="w-4 h-3 flex items-center justify-center text-black font-bold text-xs"
+                    style={{
+                      backgroundColor: '#c0c0c0',
+                      border: '1px outset #c0c0c0',
+                      fontSize: '8px'
+                    }}
+                  >
+                    _
+                  </div>
+                  {/* Maximize Button */}
+                  <div 
+                    className="w-4 h-3 flex items-center justify-center text-black font-bold text-xs"
+                    style={{
+                      backgroundColor: '#c0c0c0',
+                      border: '1px outset #c0c0c0',
+                      fontSize: '8px'
+                    }}
+                  >
+                    □
+                  </div>
+                  {/* Close Button */}
+                  <div 
+                    className="w-4 h-3 flex items-center justify-center text-black font-bold text-xs"
+                    style={{
+                      backgroundColor: '#c0c0c0',
+                      border: '1px outset #c0c0c0',
+                      fontSize: '8px'
+                    }}
+                  >
+                    ×
+                  </div>
                 </div>
               </div>
               
-              {/* Window Content */}
-              <div className="p-4 sm:p-8 text-center bg-gray-100">
+              {/* Window Content - Authentic Windows 95/98 Interior */}
+              <div 
+                className="p-4 sm:p-6 text-center"
+                style={{
+                  backgroundColor: '#c0c0c0',
+                  border: '1px inset #c0c0c0',
+                  fontFamily: 'MS Sans Serif, sans-serif'
+                }}
+              >
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                 >
-                  {/* Icon */}
+                  {/* Classic Computer Monitor Icon */}
                   <div className="mb-4 sm:mb-6 flex justify-center">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded flex items-center justify-center">
-                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                      </svg>
+                    <div 
+                      className="relative"
+                      style={{
+                        width: '48px',
+                        height: '40px',
+                        backgroundColor: '#808080',
+                        border: '2px outset #c0c0c0'
+                      }}
+                    >
+                      {/* Screen */}
+                      <div 
+                        className="absolute"
+                        style={{
+                          top: '4px',
+                          left: '4px',
+                          right: '4px',
+                          bottom: '8px',
+                          backgroundColor: '#000080',
+                          border: '1px inset #c0c0c0'
+                        }}
+                      ></div>
+                      {/* Stand */}
+                      <div 
+                        className="absolute"
+                        style={{
+                          bottom: '-6px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: '16px',
+                          height: '6px',
+                          backgroundColor: '#808080',
+                          border: '1px outset #c0c0c0'
+                        }}
+                      ></div>
+                      {/* Base */}
+                      <div 
+                        className="absolute"
+                        style={{
+                          bottom: '-8px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: '32px',
+                          height: '3px',
+                          backgroundColor: '#808080',
+                          border: '1px outset #c0c0c0'
+                        }}
+                      ></div>
                     </div>
                   </div>
                   
                   {/* Welcome Text */}
-                  <h2 className="text-base sm:text-lg font-bold text-gray-800 mb-2">
+                  <h2 
+                    className="text-base sm:text-lg font-bold mb-3"
+                    style={{
+                      color: '#000000',
+                      fontFamily: 'MS Sans Serif, sans-serif',
+                      fontSize: '14px',
+                      fontWeight: 'bold'
+                    }}
+                  >
                     Welcome to my Portfolio
                   </h2>
                   
-                  {/* Instruction */}
-                  <motion.p
-                    animate={{ opacity: [1, 0.5, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="text-gray-600 font-mono text-xs sm:text-sm"
+                  {/* System Message Box */}
+                  <div 
+                    className="mb-4 p-3 text-left"
+                    style={{
+                      backgroundColor: '#ffffff',
+                      border: '2px inset #c0c0c0',
+                      fontSize: '11px',
+                      fontFamily: 'MS Sans Serif, sans-serif'
+                    }}
                   >
-                    Click Anywhere To Proceed
-                  </motion.p>
+                    <div className="mb-1">System: Loading portfolio modules...</div>
+                    <div className="mb-1">System: Initializing creative interface...</div>
+                    <div className="mb-1">System: Ready to explore content.</div>
+                    <motion.div
+                      animate={{ opacity: [1, 0, 1] }}
+                      transition={{ duration: 1, repeat: Infinity }}
+                    >
+                      System: Press any key to continue_
+                    </motion.div>
+                  </div>
                   
-                  {/* Decorative cursor indicator */}
+                  {/* OK Button - Classic Windows Style */}
                   <motion.div
-                    animate={{ 
-                      x: [0, 10, -10, 0],
-                      y: [0, -5, 5, 0]
-                    }}
-                    transition={{ 
-                      duration: 2, 
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="mt-4 flex justify-center"
+                    animate={{ opacity: [1, 0.7, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="inline-block"
                   >
-                    <svg className="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.414l.707-.707zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z" clipRule="evenodd" />
-                    </svg>
+                    <div 
+                      className="px-4 py-1 text-black font-bold cursor-pointer"
+                      style={{
+                        backgroundColor: '#c0c0c0',
+                        border: '2px outset #c0c0c0',
+                        fontSize: '11px',
+                        fontFamily: 'MS Sans Serif, sans-serif',
+                        minWidth: '60px'
+                      }}
+                    >
+                      Click Anywhere To Proceed
+                    </div>
                   </motion.div>
                 </motion.div>
               </div>
               
-              {/* Window Border Effect */}
-              <div className="absolute inset-0 pointer-events-none border border-gray-300" />
+              {/* Classic Window Resize Handle */}
+              <div 
+                className="absolute bottom-0 right-0 w-3 h-3 pointer-events-none"
+                style={{
+                  background: 'linear-gradient(-45deg, transparent 40%, #808080 40%, #808080 60%, transparent 60%)',
+                  backgroundSize: '3px 3px'
+                }}
+              ></div>
             </motion.div>
           </div>
         </motion.div>

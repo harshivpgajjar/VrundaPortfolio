@@ -122,8 +122,7 @@ const workCategories = [
       {
         title: "College Magazine Project",
         driveUrl: "https://drive.google.com/drive/folders/1ONICeV1TFp4BXx4cuE4AdXdUaIK6C6QZ?usp=drive_link",
-        type: "folder",
-        thumbnail: magazineImage
+        type: "folder"
       }
     ]
   },
@@ -134,8 +133,7 @@ const workCategories = [
       {
         title: "College Radio Show",
         driveUrl: "https://drive.google.com/drive/folders/1K96qYOtl0uJz-zt5EM36Ix-KpJ0vPpdg?usp=sharing",
-        type: "folder",
-        thumbnail: radioImage
+        type: "folder"
       }
     ]
   }

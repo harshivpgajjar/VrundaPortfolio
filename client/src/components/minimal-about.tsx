@@ -15,13 +15,14 @@ export function MinimalAbout() {
           backgroundPosition: 'center',
         }}
       />
-      {/* Eyes Pattern Overlay */}
+      {/* Eyes Pattern Overlay - Subtly Hidden Across Page */}
       <div 
-        className="absolute top-20 right-20 w-32 h-32 opacity-15"
+        className="absolute inset-0 bg-repeat opacity-5"
         style={{
           backgroundImage: `url(${eyesPattern})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundSize: '200px 200px',
+          backgroundPosition: '0 0',
+          mixBlendMode: 'multiply',
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-gray-900/85 to-black/90" />

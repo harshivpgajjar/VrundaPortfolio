@@ -72,6 +72,26 @@ const workCategories = [
       "Campaign Development",
       "Audience Research"
     ]
+  },
+  {
+    title: "PRESS RELEASE ARTICLES",
+    description: "During my writing internship at ARtmeTech, I had the privilege to write two press releases for their esteemed company along with other projects.",
+    projects: [
+      {
+        title: "AR Advertising: A Bold Bet for Brand Success",
+        articleUrl: "https://archive.adgully.com/ar-advertising-a-bold-bet-for-brand-success-nirvi-jain-133036.html",
+        thumbnail: "https://archive.adgully.com/images/logo.png",
+        type: "article",
+        publication: "AdGully"
+      },
+      {
+        title: "Harnessing the Power of AI: Transforming Marketing Efforts for Success",
+        articleUrl: "https://timesofindia.indiatimes.com/blogs/voices/harnessing-the-power-of-ai-transforming-marketing-efforts-for-success/?source=app&frmapp=yes",
+        thumbnail: "https://static.toiimg.com/photo/msid-94943516/94943516.jpg",
+        type: "article",
+        publication: "Times of India"
+      }
+    ]
   }
 ];
 
@@ -83,7 +103,8 @@ export function Work() {
     "YOUTUBE SCRIPTS FOR KOTAK 811", 
     "STORYTELLING",
     "SCRIPTWRITING", 
-    "CREATIVE STRATEGY"
+    "CREATIVE STRATEGY",
+    "PRESS RELEASE ARTICLES"
   ];
 
   const getActiveCategory = () => {
@@ -198,8 +219,8 @@ export function Work() {
               </p>
 
               <div className="space-y-4">
-                {/* Check if this category has multiple videos (like Kotak scripts) */}
-                {getActiveCategory()?.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && p.type === 'video') && 
+                {/* Check if this category has multiple videos (like Kotak scripts) or multiple articles */}
+                {getActiveCategory()?.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && (p.type === 'video' || p.type === 'article')) && 
                  getActiveCategory()?.projects.length! > 1 ? (
                   // Multiple videos layout - grid for Kotak scripts
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -228,6 +249,41 @@ export function Work() {
                             </div>
                             <div className="mt-3 font-mono text-xs text-gray-600 group-hover:text-black transition-colors">
                               → SCRIPT {projectIndex + 1}
+                            </div>
+                          </a>
+                        ) : typeof project === 'object' && project !== null && 'type' in project && project.type === 'article' && 'articleUrl' in project ? (
+                          <a 
+                            href={project.articleUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block group"
+                          >
+                            <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300">
+                              {'thumbnail' in project ? (
+                                <img 
+                                  src={project.thumbnail}
+                                  alt={project.title}
+                                  className="w-full h-24 object-contain bg-white p-2 group-hover:scale-105 transition-transform duration-300"
+                                />
+                              ) : (
+                                <div className="w-full h-24 bg-gray-50 flex items-center justify-center">
+                                  <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 011 .22l4 2.4a1 1 0 010 1.76l-4 2.4a1 1 0 01-1 .22H5" />
+                                  </svg>
+                                </div>
+                              )}
+                              <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center">
+                                  <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="mt-2 text-center">
+                              <div className="font-mono text-xs text-gray-600 hover:text-black transition-colors">
+                                → ARTICLE {projectIndex + 1}
+                              </div>
                             </div>
                           </a>
                         ) : null}
@@ -292,6 +348,49 @@ export function Work() {
                               </div>
                             </a>
                           </div>
+                        ) : typeof project === 'object' && project !== null && 'type' in project && project.type === 'article' && 'articleUrl' in project ? (
+                          // Article project with publication thumbnail
+                          <div className="max-w-lg mx-auto">
+                            <a 
+                              href={project.articleUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block group"
+                            >
+                              <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300">
+                                {'thumbnail' in project ? (
+                                  <img 
+                                    src={project.thumbnail}
+                                    alt={project.title}
+                                    className="w-full h-32 object-contain bg-white p-4 group-hover:scale-105 transition-transform duration-300"
+                                  />
+                                ) : (
+                                  <div className="w-full h-32 bg-gray-50 flex items-center justify-center">
+                                    <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 011 .22l4 2.4a1 1 0 010 1.76l-4 2.4a1 1 0 01-1 .22H5" />
+                                    </svg>
+                                  </div>
+                                )}
+                                <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+                                    <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="mt-4 text-center">
+                                <div className="font-mono text-sm text-gray-600 hover:text-black transition-colors mb-1">
+                                  → {typeof project === 'object' && project !== null && 'title' in project ? project.title : 'Article'}
+                                </div>
+                                {'publication' in project && (
+                                  <div className="font-mono text-xs text-gray-400">
+                                    {project.publication}
+                                  </div>
+                                )}
+                              </div>
+                            </a>
+                          </div>
                         ) : (
                           // Regular text project
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -306,8 +405,8 @@ export function Work() {
                 )}
               </div>
 
-              {/* Only show VIEW SAMPLES link for non-video and non-document categories */}
-              {!getActiveCategory()?.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && (p.type === 'video' || p.type === 'document')) && (
+              {/* Only show VIEW SAMPLES link for non-video, non-document, and non-article categories */}
+              {!getActiveCategory()?.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && (p.type === 'video' || p.type === 'document' || p.type === 'article')) && (
                 <div className="mt-8 pt-6 border-t border-gray-200 text-center">
                   <div className="font-mono text-sm text-gray-400">
                     VIEW SAMPLES →

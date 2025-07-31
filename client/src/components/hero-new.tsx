@@ -20,9 +20,8 @@ export function HeroNew() {
             style={{ maxHeight: '90vh' }}
           />
           
-          {/* Text overlay positioned in TV screen */}
+          {/* Text inside TV screen */}
           <div className="absolute inset-0 flex items-center justify-center">
-            {/* Adjust these positioning values to align with the TV screen */}
             <div className="relative" style={{ 
               marginTop: '-8%', 
               marginLeft: '2%',
@@ -32,56 +31,121 @@ export function HeroNew() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
+                transition={{ duration: 1.5, delay: 1.5, ease: "easeOut" }}
                 className="text-center h-full flex flex-col justify-center"
               >
-                <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black leading-tight tracking-wider">
-                  <span 
-                    className="block relative"
+                <div className="text-sm sm:text-lg md:text-xl lg:text-2xl text-black leading-tight">
+                  <div 
                     style={{
                       fontFamily: '"Playfair Display", "Georgia", serif',
                       letterSpacing: '0.03em',
                       fontWeight: '600',
                     }}
                   >
-                    THE WORLD
-                  </span>
-                  <span 
-                    className="block relative mt-1"
+                    Writer
+                  </div>
+                  <div 
+                    className="my-1"
                     style={{
                       fontFamily: '"Playfair Display", "Georgia", serif',
                       letterSpacing: '0.03em',
                       fontWeight: '600',
                     }}
                   >
-                    THROUGH MY
-                  </span>
-                  <span 
-                    className="block relative mt-1 text-red-600"
+                    &
+                  </div>
+                  <div 
                     style={{
                       fontFamily: '"Playfair Display", "Georgia", serif',
                       letterSpacing: '0.03em',
-                      fontWeight: '700',
+                      fontWeight: '600',
                     }}
                   >
-                    TAINTED LENS
-                  </span>
-                </h1>
-                
-                {/* Subtitle */}
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 1 }}
-                  className="text-xs sm:text-sm md:text-base text-gray-700 font-mono tracking-wide mt-2"
-                >
-                  Writer & Storyteller
-                </motion.p>
+                    Storyteller
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Left side text - "THE WORLD THROUGH" */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
+        className="absolute left-4 sm:left-8 md:left-16 top-1/2 transform -translate-y-1/2 z-20"
+      >
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight tracking-wider">
+          <span 
+            className="block"
+            style={{
+              fontFamily: '"Playfair Display", "Georgia", serif',
+              letterSpacing: '0.03em',
+              fontWeight: '700',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
+            }}
+          >
+            THE WORLD
+          </span>
+          <span 
+            className="block mt-2"
+            style={{
+              fontFamily: '"Playfair Display", "Georgia", serif',
+              letterSpacing: '0.03em',
+              fontWeight: '700',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
+            }}
+          >
+            THROUGH
+          </span>
+        </h1>
+      </motion.div>
+
+      {/* Right side text - "MY TAINTED LENS" */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
+        className="absolute right-4 sm:right-8 md:right-16 top-1/2 transform -translate-y-1/2 z-20"
+      >
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-red-600 leading-tight tracking-wider text-right">
+          <span 
+            className="block"
+            style={{
+              fontFamily: '"Playfair Display", "Georgia", serif',
+              letterSpacing: '0.03em',
+              fontWeight: '700',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
+            }}
+          >
+            MY
+          </span>
+          <span 
+            className="block mt-2"
+            style={{
+              fontFamily: '"Playfair Display", "Georgia", serif',
+              letterSpacing: '0.03em',
+              fontWeight: '700',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
+            }}
+          >
+            TAINTED
+          </span>
+          <span 
+            className="block mt-2"
+            style={{
+              fontFamily: '"Playfair Display", "Georgia", serif',
+              letterSpacing: '0.03em',
+              fontWeight: '700',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
+            }}
+          >
+            LENS
+          </span>
+        </h1>
+      </motion.div>
       
       {/* Sparkle Sticker */}
       <motion.div

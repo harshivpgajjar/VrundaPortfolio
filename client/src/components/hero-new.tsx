@@ -35,14 +35,16 @@ export function HeroNew() {
                 className="text-center h-full flex flex-col justify-center"
               >
                 <div 
-                  className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-black font-bold"
+                  className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-black font-bold leading-tight"
                   style={{
                     fontFamily: '"Playfair Display", "Georgia", serif',
                     letterSpacing: '0.03em',
                     fontWeight: '700',
                   }}
                 >
-                  WRITER
+                  <div>BOX</div>
+                  <div>OF</div>
+                  <div>IDEAS</div>
                 </div>
               </motion.div>
             </div>

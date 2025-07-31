@@ -86,7 +86,7 @@ export function HeroNew() {
         </h1>
       </motion.div>
 
-      {/* Right side text - "MY TAINTED LENS" */}
+      {/* Right side text - "MY LENS" */}
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
@@ -104,17 +104,6 @@ export function HeroNew() {
             }}
           >
             MY
-          </span>
-          <span 
-            className="block mt-2"
-            style={{
-              fontFamily: '"Playfair Display", "Georgia", serif',
-              letterSpacing: '0.03em',
-              fontWeight: '700',
-              textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
-            }}
-          >
-            TAINTED
           </span>
           <span 
             className="block mt-2"

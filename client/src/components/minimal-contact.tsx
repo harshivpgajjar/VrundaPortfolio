@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import eyesPattern from "@assets/IMG-20250730-WA0185_1753946886350.jpg";
 
 export function MinimalContact() {
   const [copied, setCopied] = useState(false);
@@ -11,8 +12,18 @@ export function MinimalContact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-4xl mx-auto">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-3"
+        style={{
+          backgroundImage: `url(${eyesPattern})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      <div className="absolute inset-0 bg-white/95" />
+      <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -21,13 +32,7 @@ export function MinimalContact() {
           className="text-center"
         >
           <div className="font-mono text-sm tracking-widest text-gray-600 mb-16">
-            C\<br/>
-            O\<br/>
-            N\<br/>
-            N\<br/>
-            E\<br/>
-            C\<br/>
-            T
+            CONNECT
           </div>
 
           <div className="space-y-8">

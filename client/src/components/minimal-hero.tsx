@@ -1,9 +1,20 @@
 import { motion } from "framer-motion";
+import vintageRadios from "@assets/IMG-20250730-WA0181_1753946886344.jpg";
 
 export function MinimalHero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 bg-white text-black">
-      <div className="max-w-4xl w-full text-center">
+    <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 bg-white text-black relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-5"
+        style={{
+          backgroundImage: `url(${vintageRadios})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      <div className="absolute inset-0 bg-white/90" />
+      <div className="max-w-4xl w-full text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -15,28 +26,7 @@ export function MinimalHero() {
           </h1>
           
           <div className="font-mono text-lg md:text-xl text-gray-600 mb-12 tracking-widest">
-            W\<br/>
-            R\<br/>
-            I\<br/>
-            T\<br/>
-            E\<br/>
-            R\<br/>
-            \<br/>
-            A\<br/>
-            N\<br/>
-            D\<br/>
-            \<br/>
-            S\<br/>
-            T\<br/>
-            O\<br/>
-            R\<br/>
-            Y\<br/>
-            T\<br/>
-            E\<br/>
-            L\<br/>
-            L\<br/>
-            E\<br/>
-            R
+            WRITER AND STORYTELLER
           </div>
         </motion.div>
 

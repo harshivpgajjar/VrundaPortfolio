@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import communicationCollage from "@assets/IMG-20250730-WA0182_1753946886348.jpg";
 
 const workCategories = [
   {
@@ -45,8 +46,18 @@ const workCategories = [
 
 export function MinimalWork() {
   return (
-    <section id="work" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section id="work" className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-3"
+        style={{
+          backgroundImage: `url(${communicationCollage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      <div className="absolute inset-0 bg-white/95" />
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,19 +66,7 @@ export function MinimalWork() {
           className="mb-20"
         >
           <div className="font-mono text-sm tracking-widest text-gray-600 mb-8">
-            S\<br/>
-            E\<br/>
-            L\<br/>
-            E\<br/>
-            C\<br/>
-            T\<br/>
-            E\<br/>
-            D\<br/>
-            \<br/>
-            W\<br/>
-            O\<br/>
-            R\<br/>
-            K
+            SELECTED WORK
           </div>
         </motion.div>
 

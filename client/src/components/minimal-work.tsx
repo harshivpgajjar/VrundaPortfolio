@@ -107,7 +107,7 @@ export function MinimalWork() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {workCategories.map((category, index) => (
             <motion.div
               key={category.title}
@@ -115,9 +115,9 @@ export function MinimalWork() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group"
+              className={`group ${category.title === 'SHORT FILM' ? 'lg:col-span-1' : 'lg:col-span-2'}`}
             >
-              <div className="border border-gray-200 p-8 hover:bg-gray-50 transition-all duration-300">
+              <div className="border border-gray-200 p-8 hover:bg-gray-50 transition-all duration-300 h-full">
                 <h3 className="font-mono text-xl font-bold mb-4 tracking-wider">
                   {category.title}
                 </h3>
@@ -185,7 +185,9 @@ export function MinimalWork() {
                                   <img 
                                     src={project.thumbnail}
                                     alt={project.title}
-                                    className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+                                    className={`w-full object-cover group-hover:scale-105 transition-transform duration-300 ${
+                                      project.thumbnail === nightShiftPoster ? 'aspect-[3/4] h-80' : 'aspect-video'
+                                    }`}
                                   />
                                   <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">

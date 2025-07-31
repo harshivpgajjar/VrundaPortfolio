@@ -170,7 +170,7 @@ export function Work() {
               WORK
             </h1>
             <p className="font-mono text-sm text-black max-w-2xl mx-auto leading-relaxed">
-              A collection of my professional work spanning scriptwriting, copywriting, 
+              A collection of my professional and personal work spanning scriptwriting, copywriting, 
               storytelling, and creative strategy across various media and platforms.
             </p>
           </motion.div>

@@ -3,6 +3,11 @@ import { useState } from "react";
 import { Link } from "wouter";
 import communicationCollage from "@assets/IMG-20250730-WA0182_1753946886348.jpg";
 import nightShiftPoster from "@assets/poster_1753948710814.jpeg";
+import writingImage1 from "@assets/IMG-20250730-WA0181_1753946886344.jpg";
+import writingImage2 from "@assets/IMG-20250730-WA0183_1753946886349.jpg";
+import writingImage3 from "@assets/IMG-20250730-WA0185_1753946886350.jpg";
+import magazineImage from "@assets/image_1753950777887.png";
+import radioImage from "@assets/WhatsApp Image 2025-06-20 at 13.14.29_35d03867_1753950571946.jpg";
 
 const workCategories = [
   {
@@ -49,7 +54,8 @@ const workCategories = [
       {
         title: "Stories Collection",
         driveUrl: "https://drive.google.com/drive/folders/1OpjFq_AV2F10rdPImYyaqbcYiLoVq-H_?usp=sharing",
-        type: "folder"
+        type: "folder",
+        thumbnail: writingImage1
       }
     ]
   },
@@ -60,7 +66,8 @@ const workCategories = [
       {
         title: "AD Script for Macbook Pro",
         driveUrl: "https://drive.google.com/file/d/1sYMvXaoEqE-MfPKjkmuI9TrzFvfXoTYm/view?usp=sharing",
-        type: "document"
+        type: "document",
+        thumbnail: writingImage2
       }
     ]
   },
@@ -71,7 +78,8 @@ const workCategories = [
       {
         title: "Poetry Collection",
         driveUrl: "https://drive.google.com/drive/folders/1iRsRhuj5e1mBbyI1OVWLuYAtqAaRL5K7?usp=sharing",
-        type: "folder"
+        type: "folder",
+        thumbnail: writingImage3
       }
     ]
   },
@@ -102,7 +110,8 @@ const workCategories = [
       {
         title: "Article Collection",
         driveUrl: "https://drive.google.com/drive/folders/10Ydad-dmWgJkoMtVFEeTuIIQCSXR-j9k?usp=sharing",
-        type: "folder"
+        type: "folder",
+        thumbnail: writingImage1
       }
     ]
   },
@@ -113,7 +122,8 @@ const workCategories = [
       {
         title: "College Magazine Project",
         driveUrl: "https://drive.google.com/drive/folders/1ONICeV1TFp4BXx4cuE4AdXdUaIK6C6QZ?usp=drive_link",
-        type: "folder"
+        type: "folder",
+        thumbnail: magazineImage
       }
     ]
   },
@@ -124,7 +134,8 @@ const workCategories = [
       {
         title: "College Radio Show",
         driveUrl: "https://drive.google.com/drive/folders/1K96qYOtl0uJz-zt5EM36Ix-KpJ0vPpdg?usp=sharing",
-        type: "folder"
+        type: "folder",
+        thumbnail: radioImage
       }
     ]
   }
@@ -367,11 +378,28 @@ export function Work() {
                               rel="noopener noreferrer"
                               className="block group"
                             >
-                              <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 p-12 bg-gray-50 hover:bg-gray-100">
-                                <div className="flex items-center justify-center">
-                                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                                    <svg className="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                              <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300">
+                                {'thumbnail' in project ? (
+                                  <img 
+                                    src={project.thumbnail}
+                                    alt={project.title}
+                                    className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+                                  />
+                                ) : (
+                                  <div className="p-12 bg-gray-50 hover:bg-gray-100">
+                                    <div className="flex items-center justify-center">
+                                      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
+                                        <svg className="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                )}
+                                <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+                                    <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                     </svg>
                                   </div>
                                 </div>
@@ -390,10 +418,27 @@ export function Work() {
                               rel="noopener noreferrer"
                               className="block group"
                             >
-                              <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 p-12 bg-gray-50 hover:bg-gray-100">
-                                <div className="flex items-center justify-center">
-                                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                                    <svg className="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300">
+                                {'thumbnail' in project ? (
+                                  <img 
+                                    src={project.thumbnail}
+                                    alt={project.title}
+                                    className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+                                  />
+                                ) : (
+                                  <div className="p-12 bg-gray-50 hover:bg-gray-100">
+                                    <div className="flex items-center justify-center">
+                                      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
+                                        <svg className="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                )}
+                                <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+                                    <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                                     </svg>
                                   </div>

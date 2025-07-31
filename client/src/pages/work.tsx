@@ -140,14 +140,13 @@ export function Work() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-12"
+          className="absolute inset-0 bg-cover bg-center opacity-5"
           style={{
             backgroundImage: `url(${communicationCollage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
-        <div className="absolute inset-0 bg-white/80" />
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -155,10 +154,10 @@ export function Work() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h1 className="font-mono text-4xl md:text-6xl font-bold mb-6 tracking-wider">
+            <h1 className="font-mono text-4xl md:text-6xl font-bold mb-6 tracking-wider text-black">
               WORK
             </h1>
-            <p className="font-mono text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="font-mono text-sm text-black max-w-2xl mx-auto leading-relaxed">
               A collection of my professional work spanning scriptwriting, copywriting, 
               storytelling, and creative strategy across various media and platforms.
             </p>
@@ -178,7 +177,7 @@ export function Work() {
                 className={`font-mono text-xs px-4 py-2 border transition-all duration-300 ${
                   activeCategory === category
                     ? 'border-black bg-black text-white'
-                    : 'border-gray-300 hover:border-gray-500 hover:bg-gray-50'
+                    : 'border-black text-black hover:border-gray-500 hover:bg-gray-100'
                 }`}
               >
                 {category}
@@ -197,13 +196,13 @@ export function Work() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="border border-gray-200 p-8 hover:bg-gray-50 transition-all duration-300"
+              className="border border-black p-8 hover:bg-gray-50 transition-all duration-300"
             >
-              <h2 className="font-mono text-2xl font-bold mb-6 tracking-wider">
+              <h2 className="font-mono text-2xl font-bold mb-6 tracking-wider text-black">
                 {getActiveCategory()?.title}
               </h2>
               
-              <p className="font-mono text-sm text-gray-600 mb-8 leading-relaxed">
+              <p className="font-mono text-sm text-black mb-8 leading-relaxed">
                 {getActiveCategory()?.description}
               </p>
 

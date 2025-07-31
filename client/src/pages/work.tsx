@@ -185,7 +185,7 @@ export function Work() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-5"
+          className="absolute inset-0 bg-cover bg-center opacity-2"
           style={{
             backgroundImage: `url(${communicationCollage})`,
             backgroundSize: 'cover',

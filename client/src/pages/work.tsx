@@ -103,6 +103,16 @@ const workCategories = [
         type: "folder"
       }
     ]
+  },
+  {
+    title: "MAGAZINE",
+    description: "Magazine features and editorial content showcasing in-depth storytelling and journalistic writing.",
+    projects: [
+      "Feature Articles",
+      "Editorial Pieces",
+      "Interview Features",
+      "Column Writing"
+    ]
   }
 ];
 
@@ -116,7 +126,8 @@ export function Work() {
     "SCRIPTWRITING", 
     "POETRY",
     "PRESS RELEASE ARTICLES",
-    "BLOGS AND ARTICLES"
+    "BLOGS AND ARTICLES",
+    "MAGAZINE"
   ];
 
   const getActiveCategory = () => {

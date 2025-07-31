@@ -88,7 +88,7 @@ export function MinimalContact() {
             viewport={{ once: true }}
             className="bg-white/5 backdrop-blur-sm rounded-lg p-8 border border-white/10 max-w-2xl mx-auto mb-16"
           >
-            <h3 className="text-3xl md:text-4xl font-bold mb-8 tracking-widest text-white text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h3 className="text-xl md:text-2xl mb-8 tracking-widest text-white text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               SEND A MESSAGE
             </h3>
             

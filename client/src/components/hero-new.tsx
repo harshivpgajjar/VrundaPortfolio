@@ -24,7 +24,7 @@ export function HeroNew() {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative" style={{ 
               marginTop: '-10%', 
-              marginLeft: '4%',
+              marginLeft: '0%',
               width: '30%',
               height: '40%'
             }}>

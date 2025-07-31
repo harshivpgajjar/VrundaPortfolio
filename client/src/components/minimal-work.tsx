@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import communicationCollage from "@assets/IMG-20250730-WA0182_1753946886348.jpg";
+import nightShiftPoster from "@assets/poster_1753948710814.jpeg";
 
 const workCategories = [
   {
@@ -9,7 +10,7 @@ const workCategories = [
       {
         title: "The Night Shift",
         videoUrl: "https://youtu.be/mfqwNWA2X1A?si=oLHD2mGSp8sm07i7",
-        thumbnail: "https://img.youtube.com/vi/mfqwNWA2X1A/maxresdefault.jpg",
+        thumbnail: nightShiftPoster,
         type: "video"
       }
     ]

@@ -15,14 +15,14 @@ export function MinimalContact() {
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-3"
+        className="absolute inset-0 bg-cover bg-center opacity-12"
         style={{
           backgroundImage: `url(${eyesPattern})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       />
-      <div className="absolute inset-0 bg-white/95" />
+      <div className="absolute inset-0 bg-white/80" />
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

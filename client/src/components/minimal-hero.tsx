@@ -6,14 +6,14 @@ export function MinimalHero() {
     <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 bg-white text-black relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-5"
+        className="absolute inset-0 bg-cover bg-center opacity-15"
         style={{
           backgroundImage: `url(${vintageRadios})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       />
-      <div className="absolute inset-0 bg-white/90" />
+      <div className="absolute inset-0 bg-white/75" />
       <div className="max-w-4xl w-full text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

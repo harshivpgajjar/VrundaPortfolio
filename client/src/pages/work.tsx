@@ -64,13 +64,13 @@ const workCategories = [
     ]
   },
   {
-    title: "CREATIVE STRATEGY",
-    description: "Strategic content planning that aligns with brand goals and audience engagement objectives.",
+    title: "POETRY",
+    description: "Personal and artistic expression through verse, exploring themes of emotion, experience, and creative storytelling.",
     projects: [
-      "Content Planning",
-      "Editorial Calendars",
-      "Campaign Development",
-      "Audience Research"
+      "Personal Poetry Collection",
+      "Spoken Word Pieces",
+      "Creative Writing Exercises",
+      "Emotional Narratives"
     ]
   },
   {
@@ -114,7 +114,7 @@ export function Work() {
     "YOUTUBE SCRIPTS FOR KOTAK 811", 
     "STORYTELLING",
     "SCRIPTWRITING", 
-    "CREATIVE STRATEGY",
+    "POETRY",
     "PRESS RELEASE ARTICLES",
     "BLOGS AND ARTICLES"
   ];

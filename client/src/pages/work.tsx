@@ -57,7 +57,7 @@ const workCategories = [
     description: "Visual storytelling through scripts for various media formats and digital content.",
     projects: [
       {
-        title: "Script Sample",
+        title: "AD script",
         driveUrl: "https://drive.google.com/file/d/1sYMvXaoEqE-MfPKjkmuI9TrzFvfXoTYm/view?usp=sharing",
         type: "document"
       }

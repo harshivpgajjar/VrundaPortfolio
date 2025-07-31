@@ -117,12 +117,13 @@ const workCategories = [
   },
   {
     title: "RADIO PROJECT",
-    description: "Audio content creation and radio show development showcasing voice storytelling and broadcast media skills.",
+    description: "We made a 15-min radio project in the third-year of our college. I conceptualized the idea, wrote the script and co-hosted the show.",
     projects: [
-      "Radio Show Scripts",
-      "Audio Storytelling",
-      "Podcast Concepts",
-      "Voice Narration"
+      {
+        title: "College Radio Show",
+        driveUrl: "https://drive.google.com/drive/folders/1K96qYOtl0uJz-zt5EM36Ix-KpJ0vPpdg?usp=sharing",
+        type: "folder"
+      }
     ]
   }
 ];

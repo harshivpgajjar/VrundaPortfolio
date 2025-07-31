@@ -23,10 +23,10 @@ export function HeroNew() {
           {/* Text inside TV screen */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative" style={{ 
-              marginTop: '-8%', 
-              marginLeft: '-8%',
-              width: '45%',
-              height: '35%'
+              marginTop: '-5%', 
+              marginLeft: '5%',
+              width: '35%',
+              height: '30%'
             }}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -34,7 +34,7 @@ export function HeroNew() {
                 transition={{ duration: 1.5, delay: 1.5, ease: "easeOut" }}
                 className="text-center h-full flex flex-col justify-center"
               >
-                <div className="text-sm sm:text-lg md:text-xl lg:text-2xl text-black leading-tight">
+                <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-black leading-tight font-bold">
                   <div 
                     style={{
                       fontFamily: '"Playfair Display", "Georgia", serif',
@@ -75,7 +75,7 @@ export function HeroNew() {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-        className="absolute left-4 sm:left-8 md:left-16 z-20"
+        className="absolute left-2 sm:left-4 md:left-8 z-20"
         style={{ top: '35%', transform: 'translateY(-50%)' }}
       >
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight tracking-wider">

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export function MinimalNavigation() {
   const scrollToSection = (id: string) => {
@@ -28,6 +29,11 @@ export function MinimalNavigation() {
             >
               WORK
             </button>
+            <Link href="/blog">
+              <span className="font-mono text-sm hover:text-gray-600 transition-colors cursor-pointer">
+                BLOG
+              </span>
+            </Link>
             <button 
               onClick={() => scrollToSection('about')}
               className="font-mono text-sm hover:text-gray-600 transition-colors"

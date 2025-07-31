@@ -100,7 +100,7 @@ const workCategories = [
     projects: [
       {
         title: "Article Collection",
-        driveUrl: "https://drive.google.com/drive/folders/1W3WPCZmv2uKnEk0gK8jD8CyPdO2og7Xc?usp=sharing",
+        driveUrl: "https://drive.google.com/drive/folders/10Ydad-dmWgJkoMtVFEeTuIIQCSXR-j9k?usp=sharing",
         type: "folder"
       }
     ]

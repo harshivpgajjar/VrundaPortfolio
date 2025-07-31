@@ -196,7 +196,7 @@ export function Work() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-2"
+          className="absolute inset-0 bg-cover bg-center opacity-[0.015]"
           style={{
             backgroundImage: `url(${communicationCollage})`,
             backgroundSize: 'cover',
@@ -380,11 +380,16 @@ export function Work() {
                             >
                               <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300">
                                 {'thumbnail' in project ? (
-                                  <img 
-                                    src={project.thumbnail}
-                                    alt={project.title}
-                                    className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
-                                  />
+                                  <div className="relative">
+                                    <img 
+                                      src={project.thumbnail}
+                                      alt={project.title}
+                                      className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+                                    />
+                                    <div className="absolute bottom-2 left-2 bg-black/80 text-white px-2 py-1 text-xs font-mono">
+                                      {typeof project === 'object' && project !== null && 'title' in project ? project.title : 'Document'}
+                                    </div>
+                                  </div>
                                 ) : (
                                   <div className="p-12 bg-gray-50 hover:bg-gray-100">
                                     <div className="flex items-center justify-center">
@@ -420,11 +425,16 @@ export function Work() {
                             >
                               <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300">
                                 {'thumbnail' in project ? (
-                                  <img 
-                                    src={project.thumbnail}
-                                    alt={project.title}
-                                    className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
-                                  />
+                                  <div className="relative">
+                                    <img 
+                                      src={project.thumbnail}
+                                      alt={project.title}
+                                      className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+                                    />
+                                    <div className="absolute bottom-2 left-2 bg-black/80 text-white px-2 py-1 text-xs font-mono">
+                                      {typeof project === 'object' && project !== null && 'title' in project ? project.title : 'Folder'}
+                                    </div>
+                                  </div>
                                 ) : (
                                   <div className="p-12 bg-gray-50 hover:bg-gray-100">
                                     <div className="flex items-center justify-center">

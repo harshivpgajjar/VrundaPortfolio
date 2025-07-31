@@ -1,7 +1,38 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Phone } from "lucide-react";
+import { Mail, Linkedin, Phone, Send } from "lucide-react";
+import { useState } from "react";
 
 export function MinimalContact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Create mailto link with form data
+    const subject = `Message from ${formData.name}`;
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+    const mailtoLink = `mailto:vrunda.mundhra23@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    window.location.href = mailtoLink;
+    
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setFormData({ name: '', email: '', message: '' });
+    }, 1000);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
@@ -49,7 +80,9 @@ export function MinimalContact() {
             CONNECT
           </div>
 
-          <div className="space-y-12 max-w-2xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+            {/* Contact Information */}
+            <div className="space-y-12">
             {/* Email */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -109,27 +142,76 @@ export function MinimalContact() {
               </a>
             </motion.div>
 
-            {/* Additional Contact Actions */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="flex justify-center space-x-8 mt-12"
-            >
-              <a
-                href="mailto:vrunda.mundhra23@gmail.com?subject=I WANT TO CONNECT"
-                className="font-mono text-xs border border-white/30 px-6 py-3 hover:bg-white hover:text-black transition-all duration-300 text-white"
-              >
-                SEND MESSAGE
-              </a>
-            </motion.div>
-
-            <div className="pt-16 border-t border-white/20 mt-16">
-              <p className="font-mono text-xs text-gray-400 text-center">
-                LET'S CREATE SOMETHING MEANINGFUL TOGETHER
-              </p>
             </div>
+
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white/5 backdrop-blur-sm rounded-lg p-8 border border-white/10"
+            >
+              <h3 className="font-mono text-xl font-bold mb-8 tracking-wider text-white">
+                SEND A MESSAGE
+              </h3>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="font-mono text-sm text-white mb-2 block">NAME</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-white/40 transition-colors"
+                    placeholder="Your full name"
+                  />
+                </div>
+                
+                <div>
+                  <label className="font-mono text-sm text-white mb-2 block">EMAIL</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-white/40 transition-colors"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                
+                <div>
+                  <label className="font-mono text-sm text-white mb-2 block">MESSAGE</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={6}
+                    className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-white/40 transition-colors resize-none"
+                    placeholder="Tell me about your project..."
+                  />
+                </div>
+                
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-white text-black font-mono text-sm font-bold py-3 px-6 rounded hover:bg-gray-200 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
+                >
+                  <span>{isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}</span>
+                  <Send size={16} />
+                </button>
+              </form>
+            </motion.div>
+          </div>
+
+          <div className="pt-16 border-t border-white/20 mt-16">
+            <p className="font-mono text-xs text-gray-400 text-center">
+              LET'S CREATE SOMETHING MEANINGFUL TOGETHER
+            </p>
           </div>
         </motion.div>
       </div>

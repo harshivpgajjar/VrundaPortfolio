@@ -15,6 +15,30 @@ const workCategories = [
     ]
   },
   {
+    title: "YOUTUBE SCRIPTS FOR KOTAK 811",
+    description: "During my tenure as a Copywriting Trainee at Schbang, I had the opportunity to work on various projects, including creating content for Kotak 811. I was responsible for writing scripts for several of their campaigns. This experience allowed me to develop my scriptwriting skills and contribute to impactful brand storytelling.",
+    projects: [
+      {
+        title: "Kotak 811 Campaign Script 1",
+        videoUrl: "https://youtu.be/CY3zOtCc7ls?si=HBOcuirosm20prg2",
+        thumbnail: "https://img.youtube.com/vi/CY3zOtCc7ls/maxresdefault.jpg",
+        type: "video"
+      },
+      {
+        title: "Kotak 811 Campaign Script 2", 
+        videoUrl: "https://youtu.be/t-p6X6FNwQQ?si=Arf1OLr3OywQRdzD",
+        thumbnail: "https://img.youtube.com/vi/t-p6X6FNwQQ/maxresdefault.jpg",
+        type: "video"
+      },
+      {
+        title: "Kotak 811 Campaign Script 3",
+        videoUrl: "https://youtu.be/wvrjm0n_j7w?si=3NBuDPSelghjXWkr", 
+        thumbnail: "https://img.youtube.com/vi/wvrjm0n_j7w/maxresdefault.jpg",
+        type: "video"
+      }
+    ]
+  },
+  {
     title: "COPYWRITING",
     description: "Strategic brand messaging and persuasive content that drives action and engagement across digital platforms.",
     projects: [
@@ -82,7 +106,7 @@ export function MinimalWork() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {workCategories.map((category, index) => (
             <motion.div
               key={category.title}
@@ -106,7 +130,7 @@ export function MinimalWork() {
                     <div key={projectIndex}>
                       {typeof project === 'object' && project !== null && 'type' in project && project.type === 'video' ? (
                         // Video project with thumbnail and link
-                        <div className="space-y-4">
+                        <div className="mb-4">
                           <a 
                             href={project.videoUrl}
                             target="_blank"

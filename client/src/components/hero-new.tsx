@@ -24,7 +24,7 @@ export function HeroNew() {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative" style={{ 
               marginTop: '-8%', 
-              marginLeft: '2%',
+              marginLeft: '-8%',
               width: '45%',
               height: '35%'
             }}>
@@ -75,7 +75,8 @@ export function HeroNew() {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-        className="absolute left-4 sm:left-8 md:left-16 top-1/2 transform -translate-y-1/2 z-20"
+        className="absolute left-4 sm:left-8 md:left-16 z-20"
+        style={{ top: '35%', transform: 'translateY(-50%)' }}
       >
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight tracking-wider">
           <span 

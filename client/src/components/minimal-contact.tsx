@@ -191,7 +191,7 @@ export function MinimalContact() {
           </motion.div>
 
           <div className="pt-16 border-t border-white/20 mt-16">
-            <p className="text-xs text-gray-400 text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <p className="text-sm text-gray-400 text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               LET'S CREATE SOMETHING MEANINGFUL TOGETHER
             </p>
           </div>

@@ -44,13 +44,6 @@ export function MinimalNavigation() {
                 WORK
               </span>
             </Link>
-            <Link href="/blog">
-              <span className={`font-mono text-sm transition-colors cursor-pointer ${
-                location?.startsWith('/blog') ? 'text-white font-bold' : 'text-gray-300 hover:text-white'
-              }`}>
-                BLOG
-              </span>
-            </Link>
             {location === '/' ? (
               <>
                 <button 

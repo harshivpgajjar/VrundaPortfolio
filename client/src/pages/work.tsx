@@ -94,8 +94,8 @@ const workCategories = [
     ]
   },
   {
-    title: "ARTICLES",
-    description: "A collection of articles and written content showcasing various topics and writing styles.",
+    title: "BLOGS AND ARTICLES",
+    description: "A collection of blogs, articles and written content showcasing various topics and writing styles.",
     projects: [
       {
         title: "Article Collection",
@@ -116,7 +116,7 @@ export function Work() {
     "SCRIPTWRITING", 
     "CREATIVE STRATEGY",
     "PRESS RELEASE ARTICLES",
-    "ARTICLES"
+    "BLOGS AND ARTICLES"
   ];
 
   const getActiveCategory = () => {
@@ -149,11 +149,6 @@ export function Work() {
               <Link href="/work">
                 <span className="font-mono text-sm text-white font-bold cursor-pointer">
                   WORK
-                </span>
-              </Link>
-              <Link href="/blog">
-                <span className="font-mono text-sm text-gray-300 hover:text-white transition-colors cursor-pointer">
-                  BLOG
                 </span>
               </Link>
             </div>

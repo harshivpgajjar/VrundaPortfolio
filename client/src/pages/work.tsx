@@ -65,12 +65,13 @@ const workCategories = [
   },
   {
     title: "POETRY",
-    description: "Personal and artistic expression through verse, exploring themes of emotion, experience, and creative storytelling.",
+    description: "This is where it all began for me. My truest reflection often mirrors my writings, and I hope it resonates with you.",
     projects: [
-      "Personal Poetry Collection",
-      "Spoken Word Pieces",
-      "Creative Writing Exercises",
-      "Emotional Narratives"
+      {
+        title: "Poetry Collection",
+        driveUrl: "https://drive.google.com/drive/folders/1iRsRhuj5e1mBbyI1OVWLuYAtqAaRL5K7?usp=sharing",
+        type: "folder"
+      }
     ]
   },
   {

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import profilePhoto from "@assets/WhatsApp Image 2025-06-20 at 13.14.29_35d03867_1753950571946.jpg";
 import tvMonitorsBackground from "@assets/poster_1753948710814.jpeg";
+import eyesPattern from "@assets/IMG-20250730-WA0185_1753946886350.jpg";
 
 export function MinimalAbout() {
   return (
@@ -11,6 +12,15 @@ export function MinimalAbout() {
         style={{
           backgroundImage: `url(${tvMonitorsBackground})`,
           backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      {/* Eyes Pattern Overlay */}
+      <div 
+        className="absolute inset-0 bg-repeat opacity-8"
+        style={{
+          backgroundImage: `url(${eyesPattern})`,
+          backgroundSize: '150px 150px',
           backgroundPosition: 'center',
         }}
       />

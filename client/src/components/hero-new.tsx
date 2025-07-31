@@ -1,97 +1,84 @@
 import { motion } from "framer-motion";
-import heroImage from "@assets/WhatsApp Image 2025-07-31 at 13.41.52_b95d2ee6_1753949555475.jpg";
+import tvImage from "@assets/IMG-20250730-WA0183_1753954982723.jpg";
 
 export function HeroNew() {
   return (
-    <section className="min-h-screen relative flex items-center justify-center overflow-hidden">
-      {/* Full-screen background image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: '110%',
-          backgroundPosition: 'center',
-        }}
-      />
-      
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/30" />
-      
-      {/* Main content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen relative flex items-center justify-center overflow-hidden bg-white">
+      {/* TV Image Container */}
+      <div className="relative w-full max-w-6xl mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="max-w-4xl mx-auto"
+          className="relative"
         >
-          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight tracking-wider relative">
-            <span 
-              className="block relative"
-              style={{
-                fontFamily: '"Playfair Display", "Georgia", serif',
-                textShadow: '2px 2px 4px rgba(0,0,0,0.8), 1px 1px 10px rgba(255,255,255,0.1)',
-                letterSpacing: '0.03em',
-                filter: 'drop-shadow(1px 1px 3px rgba(0,0,0,0.7))',
-                fontWeight: '600',
-              }}
-            >
-              THE WORLD
-            </span>
-            <span 
-              className="block relative mt-4"
-              style={{
-                fontFamily: '"Playfair Display", "Georgia", serif',
-                textShadow: '2px 2px 4px rgba(0,0,0,0.8), 1px 1px 10px rgba(255,255,255,0.1)',
-                letterSpacing: '0.03em',
-                filter: 'drop-shadow(1px 1px 3px rgba(0,0,0,0.7))',
-                fontWeight: '600',
-              }}
-            >
-              THROUGH MY
-            </span>
-            <span 
-              className="block relative mt-4 text-amber-200"
-              style={{
-                fontFamily: '"Playfair Display", "Georgia", serif',
-                textShadow: '2px 2px 4px rgba(0,0,0,0.8), 1px 1px 10px rgba(255,200,100,0.2)',
-                letterSpacing: '0.03em',
-                filter: 'drop-shadow(1px 1px 3px rgba(0,0,0,0.7))',
-                fontWeight: '700',
-              }}
-            >
-              TAINTED LENS
-            </span>
-          </h1>
+          {/* TV Image */}
+          <img 
+            src={tvImage} 
+            alt="Vintage TV" 
+            className="w-full h-auto object-contain"
+            style={{ maxHeight: '90vh' }}
+          />
           
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-lg sm:text-xl text-gray-200 font-mono tracking-wide"
-            style={{
-              textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
-            }}
-          >
-            Writer & Storyteller
-          </motion.p>
-          
-          {/* Glitch effect overlay */}
-          <div className="absolute inset-0 pointer-events-none">
-            <motion.div
-              animate={{
-                opacity: [0, 0.1, 0, 0.05, 0],
-                scaleX: [1, 1.02, 1, 0.98, 1],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "easeInOut"
-              }}
-              className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-transparent to-blue-500/10 mix-blend-overlay"
-            />
+          {/* Text overlay positioned in TV screen */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            {/* Adjust these positioning values to align with the TV screen */}
+            <div className="relative" style={{ 
+              marginTop: '-8%', 
+              marginLeft: '2%',
+              width: '45%',
+              height: '35%'
+            }}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
+                className="text-center h-full flex flex-col justify-center"
+              >
+                <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black leading-tight tracking-wider">
+                  <span 
+                    className="block relative"
+                    style={{
+                      fontFamily: '"Playfair Display", "Georgia", serif',
+                      letterSpacing: '0.03em',
+                      fontWeight: '600',
+                    }}
+                  >
+                    THE WORLD
+                  </span>
+                  <span 
+                    className="block relative mt-1"
+                    style={{
+                      fontFamily: '"Playfair Display", "Georgia", serif',
+                      letterSpacing: '0.03em',
+                      fontWeight: '600',
+                    }}
+                  >
+                    THROUGH MY
+                  </span>
+                  <span 
+                    className="block relative mt-1 text-red-600"
+                    style={{
+                      fontFamily: '"Playfair Display", "Georgia", serif',
+                      letterSpacing: '0.03em',
+                      fontWeight: '700',
+                    }}
+                  >
+                    TAINTED LENS
+                  </span>
+                </h1>
+                
+                {/* Subtitle */}
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 1 }}
+                  className="text-xs sm:text-sm md:text-base text-gray-700 font-mono tracking-wide mt-2"
+                >
+                  Writer & Storyteller
+                </motion.p>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -100,7 +87,7 @@ export function HeroNew() {
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
+        transition={{ delay: 2, duration: 0.8 }}
         className="absolute top-20 right-4 sm:right-10 text-4xl sm:text-6xl z-10"
         style={{ 
           filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.8))',
@@ -114,7 +101,7 @@ export function HeroNew() {
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 2, duration: 0.8 }}
+        transition={{ delay: 2.5, duration: 0.8 }}
         className="absolute bottom-32 left-4 sm:left-16 text-3xl sm:text-5xl z-10"
         style={{ 
           filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.6))',

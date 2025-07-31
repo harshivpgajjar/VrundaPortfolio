@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import communicationCollage from "@assets/IMG-20250730-WA0182_1753946886348.jpg";
 import nightShiftPoster from "@assets/poster_1753948710814.jpeg";
 
@@ -82,6 +83,21 @@ const workCategories = [
 ];
 
 export function Work() {
+  const [activeCategory, setActiveCategory] = useState<string>("SHORT FILM");
+
+  const categories = [
+    "SHORT FILM",
+    "YOUTUBE SCRIPTS FOR KOTAK 811", 
+    "COPYWRITING",
+    "STORYTELLING",
+    "SCRIPTWRITING", 
+    "CREATIVE STRATEGY"
+  ];
+
+  const getActiveCategory = () => {
+    return workCategories.find(cat => cat.title === activeCategory);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -100,7 +116,7 @@ export function Work() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="text-center mb-12"
           >
             <h1 className="font-mono text-4xl md:text-6xl font-bold mb-6 tracking-wider">
               WORK
@@ -110,131 +126,146 @@ export function Work() {
               storytelling, and creative strategy across various media and platforms.
             </p>
           </motion.div>
+
+          {/* Category Navigation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-wrap justify-center gap-4 mb-12"
+          >
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`font-mono text-xs px-4 py-2 border transition-all duration-300 ${
+                  activeCategory === category
+                    ? 'border-black bg-black text-white'
+                    : 'border-gray-300 hover:border-gray-500 hover:bg-gray-50'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* Work Categories */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {workCategories.map((category, index) => (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`group ${category.title === 'SHORT FILM' ? 'lg:col-span-1' : 'lg:col-span-2'}`}
-              >
-                <div className="border border-gray-200 p-8 hover:bg-gray-50 transition-all duration-300 h-full">
-                  <h3 className="font-mono text-xl font-bold mb-4 tracking-wider">
-                    {category.title}
-                  </h3>
-                  
-                  <p className="font-mono text-sm text-gray-600 mb-6 leading-relaxed">
-                    {category.description}
-                  </p>
+      {/* Selected Category Content */}
+      <section className="pb-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          {getActiveCategory() && (
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="border border-gray-200 p-8 hover:bg-gray-50 transition-all duration-300"
+            >
+              <h2 className="font-mono text-2xl font-bold mb-6 tracking-wider">
+                {getActiveCategory()?.title}
+              </h2>
+              
+              <p className="font-mono text-sm text-gray-600 mb-8 leading-relaxed">
+                {getActiveCategory()?.description}
+              </p>
 
-                  <div className="space-y-2">
-                    {/* Check if this category has multiple videos (like Kotak scripts) */}
-                    {category.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && p.type === 'video') && 
-                     category.projects.length > 1 ? (
-                      // Multiple videos layout - grid for Kotak scripts
-                      <div className="grid grid-cols-1 gap-4">
-                        {category.projects.map((project, projectIndex) => (
-                          <div key={projectIndex}>
-                            {typeof project === 'object' && project !== null && 'type' in project && project.type === 'video' ? (
-                              <a 
-                                href={project.videoUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block group"
-                              >
-                                <div className="flex items-center space-x-4 p-3 border border-gray-200 hover:border-gray-400 hover:bg-gray-50 transition-all duration-300">
-                                  <div className="relative flex-shrink-0 w-24 h-14 overflow-hidden">
-                                    <img 
-                                      src={project.thumbnail}
-                                      alt={project.title}
-                                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                      <div className="w-6 h-6 bg-white/90 rounded-full flex items-center justify-center">
-                                        <svg className="w-3 h-3 text-black ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                                          <path d="M8 5v14l11-7z"/>
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div className="flex-grow">
-                                    <div className="font-mono text-xs text-gray-600 group-hover:text-black transition-colors">
-                                      → SCRIPT {projectIndex + 1}
-                                    </div>
+              <div className="space-y-4">
+                {/* Check if this category has multiple videos (like Kotak scripts) */}
+                {getActiveCategory()?.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && p.type === 'video') && 
+                 getActiveCategory()?.projects.length! > 1 ? (
+                  // Multiple videos layout - grid for Kotak scripts
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {getActiveCategory()?.projects.map((project, projectIndex) => (
+                      <div key={projectIndex}>
+                        {typeof project === 'object' && project !== null && 'type' in project && project.type === 'video' ? (
+                          <a 
+                            href={project.videoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block group"
+                          >
+                            <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300">
+                              <img 
+                                src={project.thumbnail}
+                                alt={project.title}
+                                className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                              <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+                                  <svg className="w-4 h-4 text-black ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="mt-3 font-mono text-xs text-gray-600 group-hover:text-black transition-colors">
+                              → SCRIPT {projectIndex + 1}
+                            </div>
+                          </a>
+                        ) : null}
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  // Single video or text projects layout
+                  <>
+                    {getActiveCategory()?.projects.map((project, projectIndex) => (
+                      <div key={projectIndex}>
+                        {typeof project === 'object' && project !== null && 'type' in project && project.type === 'video' ? (
+                          // Single video project with large thumbnail
+                          <div className="max-w-lg mx-auto">
+                            <a 
+                              href={project.videoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block group"
+                            >
+                              <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300">
+                                <img 
+                                  src={project.thumbnail}
+                                  alt={project.title}
+                                  className={`w-full object-cover group-hover:scale-105 transition-transform duration-300 ${
+                                    project.thumbnail === nightShiftPoster ? 'aspect-[3/4] h-96' : 'aspect-video'
+                                  }`}
+                                />
+                                <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                      <path d="M8 5v14l11-7z"/>
+                                    </svg>
                                   </div>
                                 </div>
-                              </a>
-                            ) : null}
+                              </div>
+                              <div className="mt-4 text-center font-mono text-sm text-gray-600 hover:text-black transition-colors">
+                                → {typeof project === 'object' && project !== null && 'title' in project ? project.title : 'Video'}
+                              </div>
+                            </a>
                           </div>
-                        ))}
+                        ) : (
+                          // Regular text project
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="font-mono text-sm text-gray-500 hover:text-black transition-colors cursor-pointer p-4 border border-gray-200 hover:border-gray-400 hover:bg-gray-50 transition-all duration-300">
+                              → {typeof project === 'string' ? project : 'Project'}
+                            </div>
+                          </div>
+                        )}
                       </div>
-                    ) : (
-                      // Single video or text projects layout
-                      <>
-                        {category.projects.map((project, projectIndex) => (
-                          <div key={projectIndex}>
-                            {typeof project === 'object' && project !== null && 'type' in project && project.type === 'video' ? (
-                              // Single video project with large thumbnail
-                              <div className="mb-4">
-                                <a 
-                                  href={project.videoUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="block group"
-                                >
-                                  <div className="relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300">
-                                    <img 
-                                      src={project.thumbnail}
-                                      alt={project.title}
-                                      className={`w-full object-cover group-hover:scale-105 transition-transform duration-300 ${
-                                        project.thumbnail === nightShiftPoster ? 'aspect-[3/4] h-80' : 'aspect-video'
-                                      }`}
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                      <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
-                                        <svg className="w-6 h-6 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                          <path d="M8 5v14l11-7z"/>
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div className="mt-2 font-mono text-xs text-gray-600 hover:text-black transition-colors">
-                                    → {typeof project === 'object' && project !== null && 'title' in project ? project.title : 'Video'}
-                                  </div>
-                                </a>
-                              </div>
-                            ) : (
-                              // Regular text project
-                              <div className="font-mono text-xs text-gray-500 hover:text-black transition-colors cursor-pointer">
-                                → {typeof project === 'string' ? project : 'Project'}
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </>
-                    )}
-                  </div>
+                    ))}
+                  </>
+                )}
+              </div>
 
-                  {/* Only show VIEW SAMPLES link for non-video categories */}
-                  {!category.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && p.type === 'video') && (
-                    <div className="mt-6 pt-6 border-t border-gray-100">
-                      <div className="font-mono text-xs text-gray-400">
-                        VIEW SAMPLES →
-                      </div>
-                    </div>
-                  )}
+              {/* Only show VIEW SAMPLES link for non-video categories */}
+              {!getActiveCategory()?.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && p.type === 'video') && (
+                <div className="mt-8 pt-6 border-t border-gray-200 text-center">
+                  <div className="font-mono text-sm text-gray-400">
+                    VIEW SAMPLES →
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              )}
+            </motion.div>
+          )}
         </div>
       </section>
     </div>

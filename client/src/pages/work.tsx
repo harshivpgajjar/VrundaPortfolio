@@ -113,6 +113,16 @@ const workCategories = [
       "Interview Features",
       "Column Writing"
     ]
+  },
+  {
+    title: "RADIO PROJECT",
+    description: "Audio content creation and radio show development showcasing voice storytelling and broadcast media skills.",
+    projects: [
+      "Radio Show Scripts",
+      "Audio Storytelling",
+      "Podcast Concepts",
+      "Voice Narration"
+    ]
   }
 ];
 
@@ -127,7 +137,8 @@ export function Work() {
     "POETRY",
     "PRESS RELEASE ARTICLES",
     "BLOGS AND ARTICLES",
-    "MAGAZINE"
+    "MAGAZINE",
+    "RADIO PROJECT"
   ];
 
   const getActiveCategory = () => {

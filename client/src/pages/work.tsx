@@ -112,7 +112,7 @@ export function Work() {
           <div className="flex justify-between items-center py-4">
             <Link href="/">
               <span className="font-mono text-sm font-bold tracking-wider cursor-pointer text-white hover:text-gray-300 transition-colors">
-                VM
+                VRUNDA MUNDHRA
               </span>
             </Link>
             

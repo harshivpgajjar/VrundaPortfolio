@@ -9,7 +9,7 @@ export function HeroNew() {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
+          backgroundSize: '110%',
           backgroundPosition: 'center',
         }}
       />
@@ -27,40 +27,37 @@ export function HeroNew() {
         >
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight tracking-wider relative">
             <span 
-              className="block relative grunge-text"
+              className="block relative"
               style={{
-                fontFamily: '"Nosifer", "Creepster", "Courier New", monospace',
-                textShadow: '4px 4px 0px rgba(0,0,0,0.9), 8px 8px 0px rgba(0,0,0,0.5), 2px 2px 20px rgba(255,255,255,0.3)',
-                letterSpacing: '0.08em',
-                transform: 'skew(-1deg) rotate(-0.5deg)',
-                filter: 'contrast(1.3) brightness(1.2) drop-shadow(2px 2px 8px rgba(0,0,0,0.8))',
-                WebkitTextStroke: '1px rgba(255,255,255,0.1)',
+                fontFamily: '"Playfair Display", "Georgia", serif',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.8), 1px 1px 10px rgba(255,255,255,0.1)',
+                letterSpacing: '0.03em',
+                filter: 'drop-shadow(1px 1px 3px rgba(0,0,0,0.7))',
+                fontWeight: '600',
               }}
             >
               THE WORLD
             </span>
             <span 
-              className="block relative mt-4 grunge-text"
+              className="block relative mt-4"
               style={{
-                fontFamily: '"Nosifer", "Creepster", "Courier New", monospace',
-                textShadow: '4px 4px 0px rgba(0,0,0,0.9), 8px 8px 0px rgba(0,0,0,0.5), 2px 2px 20px rgba(255,255,255,0.3)',
-                letterSpacing: '0.08em',
-                transform: 'skew(1deg) rotate(0.3deg)',
-                filter: 'contrast(1.3) brightness(1.2) drop-shadow(2px 2px 8px rgba(0,0,0,0.8))',
-                WebkitTextStroke: '1px rgba(255,255,255,0.1)',
+                fontFamily: '"Playfair Display", "Georgia", serif',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.8), 1px 1px 10px rgba(255,255,255,0.1)',
+                letterSpacing: '0.03em',
+                filter: 'drop-shadow(1px 1px 3px rgba(0,0,0,0.7))',
+                fontWeight: '600',
               }}
             >
               THROUGH MY
             </span>
             <span 
-              className="block relative mt-4 text-red-400 grunge-text"
+              className="block relative mt-4 text-amber-200"
               style={{
-                fontFamily: '"Nosifer", "Creepster", "Courier New", monospace',
-                textShadow: '4px 4px 0px rgba(139,0,0,0.9), 8px 8px 0px rgba(139,0,0,0.5), 2px 2px 20px rgba(255,100,100,0.4)',
-                letterSpacing: '0.08em',
-                transform: 'skew(-0.5deg) rotate(-0.2deg)',
-                filter: 'contrast(1.4) brightness(1.3) saturate(1.4) drop-shadow(3px 3px 10px rgba(139,0,0,0.6))',
-                WebkitTextStroke: '1px rgba(255,0,0,0.2)',
+                fontFamily: '"Playfair Display", "Georgia", serif',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.8), 1px 1px 10px rgba(255,200,100,0.2)',
+                letterSpacing: '0.03em',
+                filter: 'drop-shadow(1px 1px 3px rgba(0,0,0,0.7))',
+                fontWeight: '700',
               }}
             >
               TAINTED LENS

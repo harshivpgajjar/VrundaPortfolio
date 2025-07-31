@@ -36,45 +36,45 @@ export function StartupOverlay({ onClose }: StartupOverlayProps) {
           <div className="absolute inset-0 bg-black" />
           
           {/* Window Frame */}
-          <div className="absolute inset-0 flex items-center justify-center p-8">
+          <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-8">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative bg-gray-200 border-2 border-gray-400 shadow-2xl max-w-md w-full"
+              className="relative bg-gray-200 border-2 border-gray-400 shadow-2xl max-w-sm sm:max-w-md w-full mx-4"
               style={{
                 boxShadow: "inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.7)"
               }}
             >
               {/* Window Title Bar */}
-              <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white px-3 py-1 text-sm font-bold flex items-center justify-between border-b border-gray-400">
-                <span>Vrunda Mundhra - Portfolio</span>
-                <div className="flex space-x-1">
-                  <div className="w-3 h-3 bg-gray-300 rounded-sm"></div>
-                  <div className="w-3 h-3 bg-gray-300 rounded-sm"></div>
-                  <div className="w-3 h-3 bg-red-500 rounded-sm"></div>
+              <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white px-2 sm:px-3 py-1 text-xs sm:text-sm font-bold flex items-center justify-between border-b border-gray-400">
+                <span className="truncate">Vrunda Mundhra - Portfolio</span>
+                <div className="flex space-x-1 flex-shrink-0 ml-2">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gray-300 rounded-sm"></div>
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gray-300 rounded-sm"></div>
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-sm"></div>
                 </div>
               </div>
               
               {/* Window Content */}
-              <div className="p-8 text-center bg-gray-100">
+              <div className="p-4 sm:p-8 text-center bg-gray-100">
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                 >
                   {/* Icon */}
-                  <div className="mb-6 flex justify-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="mb-4 sm:mb-6 flex justify-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded flex items-center justify-center">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                       </svg>
                     </div>
                   </div>
                   
                   {/* Welcome Text */}
-                  <h2 className="text-lg font-bold text-gray-800 mb-2">
+                  <h2 className="text-base sm:text-lg font-bold text-gray-800 mb-2">
                     Welcome to my Portfolio
                   </h2>
                   
@@ -82,7 +82,7 @@ export function StartupOverlay({ onClose }: StartupOverlayProps) {
                   <motion.p
                     animate={{ opacity: [1, 0.5, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="text-gray-600 font-mono text-sm"
+                    className="text-gray-600 font-mono text-xs sm:text-sm"
                   >
                     Click Anywhere To Proceed
                   </motion.p>

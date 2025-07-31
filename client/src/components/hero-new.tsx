@@ -57,10 +57,10 @@ export function HeroNew() {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-        className="absolute left-2 sm:left-4 md:left-8 z-20"
-        style={{ top: '35%', transform: 'translateY(-50%)' }}
+        className="absolute left-1 sm:left-2 md:left-4 lg:left-8 z-20"
+        style={{ top: '30%', transform: 'translateY(-50%)' }}
       >
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight tracking-wider">
+        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold text-black leading-tight tracking-wider">
           <span 
             className="block"
             style={{
@@ -73,7 +73,7 @@ export function HeroNew() {
             THE WORLD
           </span>
           <span 
-            className="block mt-2"
+            className="block mt-1 sm:mt-2"
             style={{
               fontFamily: '"Playfair Display", "Georgia", serif',
               letterSpacing: '0.03em',
@@ -91,9 +91,9 @@ export function HeroNew() {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
-        className="absolute right-4 sm:right-8 md:right-16 top-1/2 transform -translate-y-1/2 z-20"
+        className="absolute right-1 sm:right-2 md:right-4 lg:right-8 xl:right-16 top-1/2 transform -translate-y-1/2 z-20"
       >
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-red-600 leading-tight tracking-wider text-right">
+        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold text-red-600 leading-tight tracking-wider text-right">
           <span 
             className="block"
             style={{
@@ -106,7 +106,7 @@ export function HeroNew() {
             MY
           </span>
           <span 
-            className="block mt-2"
+            className="block mt-1 sm:mt-2"
             style={{
               fontFamily: '"Playfair Display", "Georgia", serif',
               letterSpacing: '0.03em',
@@ -124,7 +124,7 @@ export function HeroNew() {
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 2, duration: 0.8 }}
-        className="absolute top-20 right-4 sm:right-10 text-4xl sm:text-6xl z-10"
+        className="absolute top-16 sm:top-20 right-2 sm:right-4 md:right-10 text-2xl sm:text-4xl md:text-6xl z-10"
         style={{ 
           filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.8))',
           animation: 'sparkle 3s ease-in-out infinite'
@@ -138,7 +138,7 @@ export function HeroNew() {
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 2.5, duration: 0.8 }}
-        className="absolute bottom-32 left-4 sm:left-16 text-3xl sm:text-5xl z-10"
+        className="absolute bottom-24 sm:bottom-32 left-2 sm:left-4 md:left-16 text-2xl sm:text-3xl md:text-5xl z-10"
         style={{ 
           filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.6))',
           animation: 'discoBall 4s ease-in-out infinite'

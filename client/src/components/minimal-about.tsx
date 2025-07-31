@@ -5,7 +5,7 @@ import eyesPattern from "@assets/IMG-20250730-WA0185_1753946886350.jpg";
 
 export function MinimalAbout() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-10"
@@ -20,7 +20,7 @@ export function MinimalAbout() {
         className="absolute inset-0 bg-repeat opacity-5"
         style={{
           backgroundImage: `url(${eyesPattern})`,
-          backgroundSize: '200px 200px',
+          backgroundSize: '150px 150px',
           backgroundPosition: '0 0',
           mixBlendMode: 'multiply',
         }}
@@ -32,12 +32,12 @@ export function MinimalAbout() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="font-mono text-4xl md:text-6xl font-bold mb-16 tracking-wider text-center text-white"
+          className="font-mono text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-8 sm:mb-12 lg:mb-16 tracking-wider text-center text-white"
         >
           ABOUT
         </motion.h2>
         
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Photo Section */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -50,10 +50,10 @@ export function MinimalAbout() {
               <img 
                 src={profilePhoto} 
                 alt="Vrunda Mundhra"
-                className="w-80 h-80 object-cover rounded-lg shadow-lg"
+                className="w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 object-cover rounded-lg shadow-lg mx-auto"
               />
             </div>
-            <p className="font-mono text-sm text-gray-300 mt-4 text-center italic max-w-80">
+            <p className="font-mono text-xs sm:text-sm text-gray-300 mt-3 sm:mt-4 text-center italic max-w-72 sm:max-w-80 mx-auto">
               Appearances are deceptive, so I will let my work speak.
             </p>
           </motion.div>
@@ -67,10 +67,10 @@ export function MinimalAbout() {
             className="space-y-8"
           >
             <div>
-              <h3 className="font-mono text-xl font-bold mb-6 tracking-wider text-white">
+              <h3 className="font-mono text-lg sm:text-xl font-bold mb-4 sm:mb-6 tracking-wider text-white">
                 BACKGROUND
               </h3>
-              <p className="font-mono text-sm leading-relaxed text-gray-300 mb-6">
+              <p className="font-mono text-xs sm:text-sm leading-relaxed text-gray-300 mb-4 sm:mb-6">
                 As a Mass Media graduate with a deep passion for storytelling, I specialize in creating 
                 engaging content that connects with diverse audiences. My expertise spans writing, 
                 digital media, and strategic communication, allowing me to craft narratives that 

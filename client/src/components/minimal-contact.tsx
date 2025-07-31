@@ -35,17 +35,17 @@ export function MinimalContact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
       {/* Solar System Background */}
-      <div className="absolute inset-0 opacity-15">
+      <div className="absolute inset-0 opacity-10 sm:opacity-15">
         {/* Sun at center */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-yellow-300 via-orange-400 to-yellow-500 rounded-full animate-pulse shadow-xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-yellow-300 via-orange-400 to-yellow-500 rounded-full animate-pulse shadow-xl"></div>
         
         {/* Orbital rings */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white/10 rounded-full"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-white/8 rounded-full"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white/6 rounded-full"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-white/4 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 sm:w-32 sm:h-32 border border-white/10 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 sm:w-48 sm:h-48 border border-white/8 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-64 sm:h-64 border border-white/6 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 sm:w-80 sm:h-80 border border-white/4 rounded-full"></div>
         
         {/* Planets */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32">
@@ -76,7 +76,7 @@ export function MinimalContact() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="font-sans text-3xl md:text-4xl font-bold tracking-widest text-white mb-16" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <div className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold tracking-widest text-white mb-8 sm:mb-12 lg:mb-16" style={{ fontFamily: 'Montserrat, sans-serif' }}>
             LET'S CONNECT
           </div>
 
@@ -86,50 +86,50 @@ export function MinimalContact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-sm rounded-lg p-8 border border-white/10 max-w-2xl mx-auto mb-16"
+            className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 lg:p-8 border border-white/10 max-w-2xl mx-auto mb-8 sm:mb-12 lg:mb-16"
           >
-            <h3 className="text-xl md:text-2xl mb-8 tracking-widest text-white text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h3 className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 tracking-widest text-white text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               SEND A MESSAGE
             </h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
-                <label className="text-sm text-white mb-2 block" style={{ fontFamily: 'Montserrat, sans-serif' }}>NAME</label>
+                <label className="text-xs sm:text-sm text-white mb-2 block" style={{ fontFamily: 'Montserrat, sans-serif' }}>NAME</label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-white/40 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded px-3 sm:px-4 py-2 sm:py-3 text-white text-xs sm:text-sm focus:outline-none focus:border-white/40 transition-colors"
                   style={{ fontFamily: 'Montserrat, sans-serif' }}
                   placeholder="Your full name"
                 />
               </div>
               
               <div>
-                <label className="text-sm text-white mb-2 block" style={{ fontFamily: 'Montserrat, sans-serif' }}>EMAIL</label>
+                <label className="text-xs sm:text-sm text-white mb-2 block" style={{ fontFamily: 'Montserrat, sans-serif' }}>EMAIL</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-white/40 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded px-3 sm:px-4 py-2 sm:py-3 text-white text-xs sm:text-sm focus:outline-none focus:border-white/40 transition-colors"
                   style={{ fontFamily: 'Montserrat, sans-serif' }}
                   placeholder="your@email.com"
                 />
               </div>
               
               <div>
-                <label className="text-sm text-white mb-2 block" style={{ fontFamily: 'Montserrat, sans-serif' }}>MESSAGE</label>
+                <label className="text-xs sm:text-sm text-white mb-2 block" style={{ fontFamily: 'Montserrat, sans-serif' }}>MESSAGE</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  rows={6}
-                  className="w-full bg-white/10 border border-white/20 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-white/40 transition-colors resize-none"
+                  rows={4}
+                  className="w-full bg-white/10 border border-white/20 rounded px-3 sm:px-4 py-2 sm:py-3 text-white text-xs sm:text-sm focus:outline-none focus:border-white/40 transition-colors resize-none sm:rows-6"
                   style={{ fontFamily: 'Montserrat, sans-serif' }}
                 />
               </div>
@@ -137,11 +137,11 @@ export function MinimalContact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-white text-black text-sm font-bold py-3 px-6 rounded hover:bg-gray-200 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
+                className="w-full bg-white text-black text-xs sm:text-sm font-bold py-2 sm:py-3 px-4 sm:px-6 rounded hover:bg-gray-200 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
                 style={{ fontFamily: 'Montserrat, sans-serif' }}
               >
                 <span>{isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}</span>
-                <Send size={16} />
+                <Send size={14} className="sm:w-4 sm:h-4" />
               </button>
             </form>
           </motion.div>

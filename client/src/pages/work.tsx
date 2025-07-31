@@ -171,21 +171,21 @@ export function Work() {
         className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-700"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-3 md:py-4">
             <Link href="/">
-              <span className="font-mono text-sm font-bold tracking-wider cursor-pointer text-white hover:text-gray-300 transition-colors">
+              <span className="font-mono text-xs sm:text-sm font-bold tracking-wider cursor-pointer text-white hover:text-gray-300 transition-colors">
                 VRUNDA MUNDHRA
               </span>
             </Link>
             
-            <div className="hidden md:flex space-x-8">
+            <div className="flex space-x-4 sm:space-x-6 md:space-x-8">
               <Link href="/">
-                <span className="font-mono text-sm text-gray-300 hover:text-white transition-colors cursor-pointer">
+                <span className="font-mono text-xs sm:text-sm text-gray-300 hover:text-white transition-colors cursor-pointer">
                   HOME
                 </span>
               </Link>
               <Link href="/work">
-                <span className="font-mono text-sm text-white font-bold cursor-pointer">
+                <span className="font-mono text-xs sm:text-sm text-white font-bold cursor-pointer">
                   WORK
                 </span>
               </Link>
@@ -195,7 +195,7 @@ export function Work() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <section className="pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-[0.015]"
           style={{
@@ -209,12 +209,12 @@ export function Work() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-10 lg:mb-12"
           >
-            <h1 className="font-mono text-4xl md:text-6xl font-bold mb-6 tracking-wider text-black">
+            <h1 className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-wider text-black">
               WORK
             </h1>
-            <p className="font-mono text-sm text-black max-w-2xl mx-auto leading-relaxed">
+            <p className="font-mono text-xs sm:text-sm text-black max-w-xl sm:max-w-2xl mx-auto leading-relaxed px-4">
               A collection of my professional and personal work spanning scriptwriting, copywriting, 
               storytelling, and creative strategy across various media and platforms.
             </p>
@@ -225,19 +225,27 @@ export function Work() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 mb-8 sm:mb-10 lg:mb-12 px-2"
           >
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`font-mono text-xs px-4 py-2 border transition-all duration-300 ${
+                className={`font-mono text-xs sm:text-sm px-2 sm:px-3 lg:px-4 py-1.5 sm:py-2 border transition-all duration-300 text-center min-w-0 ${
                   activeCategory === category
                     ? 'border-black bg-black text-white'
                     : 'border-black text-black hover:border-gray-500 hover:bg-gray-100'
                 }`}
+                style={{ wordBreak: 'break-word' }}
               >
-                {category}
+                <span className="block leading-tight">
+                  {category.length > 20 ? 
+                    category.split(' ').map((word, i) => (
+                      <span key={i} className="block sm:inline sm:mr-1">{word}</span>
+                    )) 
+                    : category
+                  }
+                </span>
               </button>
             ))}
           </motion.div>
@@ -245,7 +253,7 @@ export function Work() {
       </section>
 
       {/* Selected Category Content */}
-      <section className="pb-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           {getActiveCategory() && (
             <motion.div
@@ -253,13 +261,13 @@ export function Work() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="border border-black p-8 hover:bg-gray-50 transition-all duration-300"
+              className="border border-black p-4 sm:p-6 lg:p-8 hover:bg-gray-50 transition-all duration-300"
             >
-              <h2 className="font-mono text-2xl font-bold mb-6 tracking-wider text-black">
+              <h2 className="font-mono text-lg sm:text-xl lg:text-2xl font-bold mb-4 sm:mb-6 tracking-wider text-black">
                 {getActiveCategory()?.title}
               </h2>
               
-              <p className="font-mono text-sm text-black mb-8 leading-relaxed">
+              <p className="font-mono text-xs sm:text-sm text-black mb-6 sm:mb-8 leading-relaxed">
                 {getActiveCategory()?.description}
               </p>
 
@@ -268,7 +276,7 @@ export function Work() {
                 {getActiveCategory()?.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && (p.type === 'video' || p.type === 'article')) && 
                  getActiveCategory()?.projects.length! > 1 ? (
                   // Multiple videos layout - grid for Kotak scripts
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {getActiveCategory()?.projects.map((project, projectIndex) => (
                       <div key={projectIndex}>
                         {typeof project === 'object' && project !== null && 'type' in project && project.type === 'video' && 'videoUrl' in project && 'thumbnail' in project ? (
@@ -285,14 +293,14 @@ export function Work() {
                                 className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
                               />
                               <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
-                                  <svg className="w-4 h-4 text-black ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-white/90 rounded-full flex items-center justify-center">
+                                  <svg className="w-3 h-3 sm:w-4 sm:h-4 text-black ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M8 5v14l11-7z"/>
                                   </svg>
                                 </div>
                               </div>
                             </div>
-                            <div className="mt-3 font-mono text-xs text-gray-600 group-hover:text-black transition-colors">
+                            <div className="mt-2 sm:mt-3 font-mono text-xs text-gray-600 group-hover:text-black transition-colors">
                               → SCRIPT {projectIndex + 1}
                             </div>
                           </a>
@@ -342,7 +350,7 @@ export function Work() {
                       <div key={projectIndex}>
                         {typeof project === 'object' && project !== null && 'type' in project && project.type === 'video' && 'videoUrl' in project && 'thumbnail' in project ? (
                           // Single video project with large thumbnail
-                          <div className="max-w-lg mx-auto">
+                          <div className="max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
                             <a 
                               href={project.videoUrl}
                               target="_blank"
@@ -354,25 +362,25 @@ export function Work() {
                                   src={project.thumbnail}
                                   alt={project.title}
                                   className={`w-full object-contain group-hover:scale-105 transition-transform duration-300 ${
-                                    project.thumbnail === nightShiftPoster ? 'h-auto max-h-[600px]' : 'aspect-video object-cover'
+                                    project.thumbnail === nightShiftPoster ? 'h-auto max-h-[400px] sm:max-h-[500px] lg:max-h-[600px]' : 'aspect-video object-cover'
                                   }`}
                                 />
                                 <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                  <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center">
-                                    <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white/90 rounded-full flex items-center justify-center">
+                                    <svg className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-black ml-0.5 sm:ml-1" fill="currentColor" viewBox="0 0 24 24">
                                       <path d="M8 5v14l11-7z"/>
                                     </svg>
                                   </div>
                                 </div>
                               </div>
-                              <div className="mt-4 text-center font-mono text-sm text-gray-600 hover:text-black transition-colors">
+                              <div className="mt-3 sm:mt-4 text-center font-mono text-xs sm:text-sm text-gray-600 hover:text-black transition-colors">
                                 → {typeof project === 'object' && project !== null && 'title' in project ? project.title : 'Video'}
                               </div>
                             </a>
                           </div>
                         ) : typeof project === 'object' && project !== null && 'type' in project && project.type === 'document' && 'driveUrl' in project ? (
                           // Document project with Google Drive link
-                          <div className="max-w-lg mx-auto">
+                          <div className="max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
                             <a 
                               href={project.driveUrl}
                               target="_blank"
@@ -392,10 +400,10 @@ export function Work() {
                                     </div>
                                   </div>
                                 ) : (
-                                  <div className="p-12 bg-gray-50 hover:bg-gray-100">
+                                  <div className="p-8 sm:p-12 bg-gray-50 hover:bg-gray-100">
                                     <div className="flex items-center justify-center">
-                                      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                                        <svg className="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
+                                        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                         </svg>
                                       </div>
@@ -403,21 +411,21 @@ export function Work() {
                                   </div>
                                 )}
                                 <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
-                                    <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/90 rounded-full flex items-center justify-center">
+                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                     </svg>
                                   </div>
                                 </div>
                               </div>
-                              <div className="mt-4 text-center font-mono text-sm text-gray-600 hover:text-black transition-colors">
+                              <div className="mt-3 sm:mt-4 text-center font-mono text-xs sm:text-sm text-gray-600 hover:text-black transition-colors">
                                 → {typeof project === 'object' && project !== null && 'title' in project ? project.title : 'Document'}
                               </div>
                             </a>
                           </div>
                         ) : typeof project === 'object' && project !== null && 'type' in project && project.type === 'folder' && 'driveUrl' in project ? (
                           // Folder project with Google Drive link
-                          <div className="max-w-lg mx-auto">
+                          <div className="max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
                             <a 
                               href={project.driveUrl}
                               target="_blank"
@@ -437,10 +445,10 @@ export function Work() {
                                     </div>
                                   </div>
                                 ) : (
-                                  <div className="p-12 bg-gray-50 hover:bg-gray-100">
+                                  <div className="p-8 sm:p-12 bg-gray-50 hover:bg-gray-100">
                                     <div className="flex items-center justify-center">
-                                      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                                        <svg className="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
+                                        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                                         </svg>
                                       </div>
@@ -448,14 +456,14 @@ export function Work() {
                                   </div>
                                 )}
                                 <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
-                                    <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/90 rounded-full flex items-center justify-center">
+                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                                     </svg>
                                   </div>
                                 </div>
                               </div>
-                              <div className="mt-4 text-center font-mono text-sm text-gray-600 hover:text-black transition-colors">
+                              <div className="mt-3 sm:mt-4 text-center font-mono text-xs sm:text-sm text-gray-600 hover:text-black transition-colors">
                                 → {typeof project === 'object' && project !== null && 'title' in project ? project.title : 'Folder'}
                               </div>
                             </a>

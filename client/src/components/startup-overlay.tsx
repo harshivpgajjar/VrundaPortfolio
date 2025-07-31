@@ -32,207 +32,158 @@ export function StartupOverlay({ onClose }: StartupOverlayProps) {
           className="fixed inset-0 z-[9999] cursor-pointer"
           onClick={handleClick}
         >
-          {/* Background */}
-          <div className="absolute inset-0 bg-black" />
+          {/* Background - Sky/Nature View */}
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to bottom, #87CEEB 0%, #98FB98 40%, #90EE90 100%)',
+            }}
+          />
           
-          {/* Window Frame */}
+          {/* Old Wooden Window Frame */}
           <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-8">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative max-w-sm sm:max-w-lg w-full mx-4"
+              className="relative max-w-md sm:max-w-xl w-full mx-4"
               style={{
-                backgroundColor: '#c0c0c0',
-                border: '2px outset #c0c0c0',
-                boxShadow: "2px 2px 10px rgba(0,0,0,0.8)"
+                background: 'linear-gradient(145deg, #8B4513 0%, #A0522D 50%, #8B4513 100%)',
+                padding: '20px',
+                borderRadius: '8px',
+                boxShadow: "0 0 40px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.3)"
               }}
             >
-              {/* Window Title Bar - Classic Windows 95/98 Style */}
+              {/* Window Glass Panes */}
               <div 
-                className="text-white px-2 py-1 text-xs font-bold flex items-center justify-between"
+                className="relative bg-white bg-opacity-10 backdrop-blur-sm"
                 style={{
-                  background: 'linear-gradient(90deg, #0080c0 0%, #0070b0 50%, #0080c0 100%)',
-                  height: '18px',
-                  fontSize: '11px',
-                  fontFamily: 'MS Sans Serif, sans-serif'
+                  aspectRatio: '4/3',
+                  border: '3px solid #654321',
+                  borderRadius: '4px',
+                  boxShadow: 'inset 0 0 10px rgba(0,0,0,0.3)',
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)'
                 }}
               >
-                <div className="flex items-center space-x-1">
-                  <div 
-                    className="w-4 h-4 flex items-center justify-center"
-                    style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
-                  >
-                    <div className="w-2 h-2 bg-white opacity-80"></div>
-                  </div>
-                  <span className="truncate">Vrunda Mundhra - Portfolio</span>
-                </div>
-                <div className="flex space-x-0">
-                  {/* Minimize Button */}
-                  <div 
-                    className="w-4 h-3 flex items-center justify-center text-black font-bold text-xs"
-                    style={{
-                      backgroundColor: '#c0c0c0',
-                      border: '1px outset #c0c0c0',
-                      fontSize: '8px'
-                    }}
-                  >
-                    _
-                  </div>
-                  {/* Maximize Button */}
-                  <div 
-                    className="w-4 h-3 flex items-center justify-center text-black font-bold text-xs"
-                    style={{
-                      backgroundColor: '#c0c0c0',
-                      border: '1px outset #c0c0c0',
-                      fontSize: '8px'
-                    }}
-                  >
-                    □
-                  </div>
-                  {/* Close Button */}
-                  <div 
-                    className="w-4 h-3 flex items-center justify-center text-black font-bold text-xs"
-                    style={{
-                      backgroundColor: '#c0c0c0',
-                      border: '1px outset #c0c0c0',
-                      fontSize: '8px'
-                    }}
-                  >
-                    ×
-                  </div>
-                </div>
-              </div>
+                {/* Window Cross Frame - Vertical */}
+                <div 
+                  className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2"
+                  style={{
+                    width: '6px',
+                    background: 'linear-gradient(90deg, #654321 0%, #8B4513 50%, #654321 100%)',
+                    boxShadow: '0 0 4px rgba(0,0,0,0.5)'
+                  }}
+                ></div>
+                {/* Window Cross Frame - Horizontal */}
+                <div 
+                  className="absolute left-0 right-0 top-1/2 transform -translate-y-1/2"
+                  style={{
+                    height: '6px',
+                    background: 'linear-gradient(180deg, #654321 0%, #8B4513 50%, #654321 100%)',
+                    boxShadow: '0 0 4px rgba(0,0,0,0.5)'
+                  }}
+                ></div>
               
-              {/* Window Content - Authentic Windows 95/98 Interior */}
-              <div 
-                className="p-4 sm:p-6 text-center"
-                style={{
-                  backgroundColor: '#c0c0c0',
-                  border: '1px inset #c0c0c0',
-                  fontFamily: 'MS Sans Serif, sans-serif'
-                }}
-              >
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                >
-                  {/* Classic Computer Monitor Icon */}
-                  <div className="mb-4 sm:mb-6 flex justify-center">
-                    <div 
-                      className="relative"
-                      style={{
-                        width: '48px',
-                        height: '40px',
-                        backgroundColor: '#808080',
-                        border: '2px outset #c0c0c0'
-                      }}
-                    >
-                      {/* Screen */}
-                      <div 
-                        className="absolute"
-                        style={{
-                          top: '4px',
-                          left: '4px',
-                          right: '4px',
-                          bottom: '8px',
-                          backgroundColor: '#000080',
-                          border: '1px inset #c0c0c0'
-                        }}
-                      ></div>
-                      {/* Stand */}
-                      <div 
-                        className="absolute"
-                        style={{
-                          bottom: '-6px',
-                          left: '50%',
-                          transform: 'translateX(-50%)',
-                          width: '16px',
-                          height: '6px',
-                          backgroundColor: '#808080',
-                          border: '1px outset #c0c0c0'
-                        }}
-                      ></div>
-                      {/* Base */}
-                      <div 
-                        className="absolute"
-                        style={{
-                          bottom: '-8px',
-                          left: '50%',
-                          transform: 'translateX(-50%)',
-                          width: '32px',
-                          height: '3px',
-                          backgroundColor: '#808080',
-                          border: '1px outset #c0c0c0'
-                        }}
-                      ></div>
-                    </div>
-                  </div>
-                  
-                  {/* Welcome Text */}
-                  <h2 
-                    className="text-base sm:text-lg font-bold mb-3"
-                    style={{
-                      color: '#000000',
-                      fontFamily: 'MS Sans Serif, sans-serif',
-                      fontSize: '14px',
-                      fontWeight: 'bold'
-                    }}
-                  >
-                    Welcome to my Portfolio
-                  </h2>
-                  
-                  {/* System Message Box */}
-                  <div 
-                    className="mb-4 p-3 text-left"
-                    style={{
-                      backgroundColor: '#ffffff',
-                      border: '2px inset #c0c0c0',
-                      fontSize: '11px',
-                      fontFamily: 'MS Sans Serif, sans-serif'
-                    }}
-                  >
-                    <div className="mb-1">System: Loading portfolio modules...</div>
-                    <div className="mb-1">System: Initializing creative interface...</div>
-                    <div className="mb-1">System: Ready to explore content.</div>
-                    <motion.div
-                      animate={{ opacity: [1, 0, 1] }}
-                      transition={{ duration: 1, repeat: Infinity }}
-                    >
-                      System: Press any key to continue_
-                    </motion.div>
-                  </div>
-                  
-                  {/* OK Button - Classic Windows Style */}
+                {/* Window Content - Center Message */}
+                <div className="absolute inset-0 flex items-center justify-center">
                   <motion.div
-                    animate={{ opacity: [1, 0.7, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="inline-block"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    className="text-center p-4"
                   >
+                    {/* Welcome Message */}
                     <div 
-                      className="px-4 py-1 text-black font-bold cursor-pointer"
+                      className="bg-white bg-opacity-90 p-4 sm:p-6 rounded-lg shadow-lg mb-4"
                       style={{
-                        backgroundColor: '#c0c0c0',
-                        border: '2px outset #c0c0c0',
-                        fontSize: '11px',
-                        fontFamily: 'MS Sans Serif, sans-serif',
-                        minWidth: '60px'
+                        backdropFilter: 'blur(10px)',
+                        border: '2px solid rgba(255,255,255,0.3)'
                       }}
                     >
-                      Click Anywhere To Proceed
+                      <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-2" style={{ fontFamily: '"Playfair Display", serif' }}>
+                        Welcome to my Portfolio
+                      </h2>
+                      <p className="text-sm text-gray-600 mb-4" style={{ fontFamily: '"Playfair Display", serif' }}>
+                        Step through this window into my world of storytelling
+                      </p>
+                      
+                      {/* Vintage Note */}
+                      <motion.div
+                        animate={{ opacity: [1, 0.7, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="text-xs text-gray-500 italic font-mono"
+                      >
+                        Click Anywhere To Proceed
+                      </motion.div>
                     </div>
+
+                    {/* Floating Elements */}
+                    <motion.div
+                      animate={{ 
+                        y: [0, -10, 0],
+                        rotate: [0, 2, -2, 0]
+                      }}
+                      transition={{ 
+                        duration: 4, 
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                      className="absolute top-4 right-4 text-2xl opacity-60"
+                    >
+                      🍃
+                    </motion.div>
+                    
+                    <motion.div
+                      animate={{ 
+                        y: [0, 15, 0],
+                        x: [0, 5, 0]
+                      }}
+                      transition={{ 
+                        duration: 3.5, 
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 1
+                      }}
+                      className="absolute bottom-6 left-6 text-xl opacity-50"
+                    >
+                      🦋
+                    </motion.div>
                   </motion.div>
-                </motion.div>
+                </div>
               </div>
               
-              {/* Classic Window Resize Handle */}
+              {/* Window Hinges */}
               <div 
-                className="absolute bottom-0 right-0 w-3 h-3 pointer-events-none"
+                className="absolute -left-2 top-6"
                 style={{
-                  background: 'linear-gradient(-45deg, transparent 40%, #808080 40%, #808080 60%, transparent 60%)',
-                  backgroundSize: '3px 3px'
+                  width: '8px',
+                  height: '20px',
+                  background: 'linear-gradient(90deg, #4A4A4A 0%, #666666 50%, #4A4A4A 100%)',
+                  borderRadius: '2px',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.5)'
+                }}
+              ></div>
+              <div 
+                className="absolute -left-2 bottom-6"
+                style={{
+                  width: '8px',
+                  height: '20px',
+                  background: 'linear-gradient(90deg, #4A4A4A 0%, #666666 50%, #4A4A4A 100%)',
+                  borderRadius: '2px',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.5)'
+                }}
+              ></div>
+              
+              {/* Window Latch */}
+              <div 
+                className="absolute -right-1 top-1/2 transform -translate-y-1/2"
+                style={{
+                  width: '6px',
+                  height: '12px',
+                  background: 'linear-gradient(90deg, #B8860B 0%, #DAA520 50%, #B8860B 100%)',
+                  borderRadius: '1px',
+                  boxShadow: '0 1px 2px rgba(0,0,0,0.5)'
                 }}
               ></div>
             </motion.div>

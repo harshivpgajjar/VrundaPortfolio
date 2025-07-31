@@ -4,7 +4,7 @@ import communicationCollage from "@assets/IMG-20250730-WA0182_1753946886348.jpg"
 const workCategories = [
   {
     title: "SHORT FILM",
-    description: "\"The Night Shift\" was a group collaboration for a college project. I wrote the script and co-directed the film with my peers. Neo-noir was allotted genre and we hoped to do justice to it.",
+    description: "\"The Night Shift\" was a group collaboration for a college project. I wrote the script and co-directed the film with my peers. Neo-noir was the allotted genre and we hoped to do justice to it.",
     projects: [
       {
         title: "The Night Shift",
@@ -104,7 +104,7 @@ export function MinimalWork() {
                 <div className="space-y-2">
                   {category.projects.map((project, projectIndex) => (
                     <div key={projectIndex}>
-                      {typeof project === 'object' && project.type === 'video' ? (
+                      {typeof project === 'object' && project !== null && 'type' in project && project.type === 'video' ? (
                         // Video project with thumbnail and link
                         <div className="space-y-4">
                           <a 
@@ -128,14 +128,14 @@ export function MinimalWork() {
                               </div>
                             </div>
                             <div className="mt-2 font-mono text-xs text-gray-600 hover:text-black transition-colors">
-                              → {project.title}
+                              → {typeof project === 'object' && project !== null && 'title' in project ? project.title : 'Video'}
                             </div>
                           </a>
                         </div>
                       ) : (
                         // Regular text project
                         <div className="font-mono text-xs text-gray-500 hover:text-black transition-colors cursor-pointer">
-                          → {project}
+                          → {typeof project === 'string' ? project : 'Project'}
                         </div>
                       )}
                     </div>
@@ -143,7 +143,7 @@ export function MinimalWork() {
                 </div>
 
                 {/* Only show VIEW SAMPLES link for non-video categories */}
-                {!category.projects.some(p => typeof p === 'object' && p.type === 'video') && (
+                {!category.projects.some(p => typeof p === 'object' && p !== null && 'type' in p && p.type === 'video') && (
                   <div className="mt-6 pt-6 border-t border-gray-100">
                     <div className="font-mono text-xs text-gray-400">
                       VIEW SAMPLES →

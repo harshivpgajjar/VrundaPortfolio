@@ -152,3 +152,11 @@ The architecture supports easy scaling by separating the storage layer and using
 - **Writing Portfolio**: BLOGS AND ARTICLES folder with comprehensive content collection
 - **Interactive Elements**: Video thumbnails, document icons, folder displays, and external link integration
 - **Navigation Updates**: Replaced STORYTELLING tab with "Stories for the soul (first drafts)" featuring authentic first draft work
+
+### Startup Experience Enhancement (January 31, 2025)
+- **Welcome Overlay**: Added startup window overlay that appears on first visit
+- **Click-to-Enter**: "Click Anywhere To Proceed" functionality for website entry
+- **Vintage Window Design**: Retro computer window styling with title bar and controls
+- **Animation Effects**: Smooth fade-in/out transitions and pulsing text effects
+- **Local Storage**: Remembers first-time visitors to avoid showing overlay on return visits
+- **User Experience**: Prevents scrolling during overlay display for focused interaction

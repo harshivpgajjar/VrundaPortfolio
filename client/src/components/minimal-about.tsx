@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
 import profilePhoto from "@assets/WhatsApp Image 2025-06-20 at 13.14.29_35d03867_1753950571946.jpg";
-import tvHead from "@assets/IMG-20250730-WA0183_1753946886349.jpg";
+import tvMonitorsBackground from "@assets/poster_1753948710814.jpeg";
 
 export function MinimalAbout() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 relative overflow-hidden">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-5"
+        className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{
-          backgroundImage: `url(${tvHead})`,
+          backgroundImage: `url(${tvMonitorsBackground})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       />
-      <div className="absolute inset-0 bg-gray-50/75" />
+      <div className="absolute inset-0 bg-black/80" />
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="font-mono text-4xl md:text-6xl font-bold mb-16 tracking-wider text-center"
+          className="font-mono text-4xl md:text-6xl font-bold mb-16 tracking-wider text-center text-white"
         >
           ABOUT
         </motion.h2>
@@ -42,7 +42,7 @@ export function MinimalAbout() {
                 className="w-80 h-80 object-cover rounded-lg shadow-lg"
               />
             </div>
-            <p className="font-mono text-sm text-gray-600 mt-4 text-center italic max-w-80">
+            <p className="font-mono text-sm text-gray-300 mt-4 text-center italic max-w-80">
               Appearances are deceptive, so I will let my work speak.
             </p>
           </motion.div>
@@ -56,16 +56,16 @@ export function MinimalAbout() {
             className="space-y-8"
           >
             <div>
-              <h3 className="font-mono text-xl font-bold mb-6 tracking-wider">
+              <h3 className="font-mono text-xl font-bold mb-6 tracking-wider text-white">
                 BACKGROUND
               </h3>
-              <p className="font-mono text-sm leading-relaxed text-gray-600 mb-6">
+              <p className="font-mono text-sm leading-relaxed text-gray-300 mb-6">
                 As a Mass Media graduate with a deep passion for storytelling, I specialize in creating 
                 engaging content that connects with diverse audiences. My expertise spans writing, 
                 digital media, and strategic communication, allowing me to craft narratives that 
                 resonate across multiple platforms.
               </p>
-              <p className="font-mono text-sm leading-relaxed text-gray-600">
+              <p className="font-mono text-sm leading-relaxed text-gray-300">
                 I focus on delivering authentic stories that drive engagement and foster lasting 
                 connections. As an avid reader, I continuously draw inspiration from literature, 
                 which has sharpened my writing skills and enhanced my storytelling ability.
@@ -73,10 +73,10 @@ export function MinimalAbout() {
             </div>
 
             <div>
-              <h3 className="font-mono text-xl font-bold mb-6 tracking-wider">
+              <h3 className="font-mono text-xl font-bold mb-6 tracking-wider text-white">
                 WHAT I AM TRULY PASSIONATE ABOUT
               </h3>
-              <p className="font-mono text-sm leading-relaxed text-gray-600">
+              <p className="font-mono text-sm leading-relaxed text-gray-300">
                 I think I'm most passionate about art in all of its glory. From qawwalis to ghazals, 
                 short films to MUBI's best feature films, poetry to haikus; irrespective of their 
                 languages. Nothing gets lost in translation because art communicates through the eyes. 

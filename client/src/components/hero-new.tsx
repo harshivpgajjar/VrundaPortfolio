@@ -25,7 +25,7 @@ export function HeroNew() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white mb-8 leading-tight tracking-wider relative">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight tracking-wider relative">
             <span 
               className="block relative grunge-text"
               style={{
@@ -99,21 +99,32 @@ export function HeroNew() {
         </motion.div>
       </div>
       
-      {/* Scroll indicator */}
+      {/* Sparkle Sticker */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.5, duration: 0.8 }}
+        className="absolute top-20 right-4 sm:right-10 text-4xl sm:text-6xl z-10"
+        style={{ 
+          filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.8))',
+          animation: 'sparkle 3s ease-in-out infinite'
+        }}
       >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="text-white/70 text-sm font-mono tracking-widest"
-          style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}
-        >
-          SCROLL DOWN
-        </motion.div>
+        ✨
+      </motion.div>
+
+      {/* Disco Ball Sticker */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 2, duration: 0.8 }}
+        className="absolute bottom-32 left-4 sm:left-16 text-3xl sm:text-5xl z-10"
+        style={{ 
+          filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.6))',
+          animation: 'discoBall 4s ease-in-out infinite'
+        }}
+      >
+        🪩
       </motion.div>
     </section>
   );

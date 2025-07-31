@@ -378,4 +378,42 @@
       transform: translate(-1px, 2px);
     }
   }
+
+  @keyframes sparkle {
+    0%, 100% { 
+      transform: rotate(0deg) scale(1);
+      opacity: 0.8;
+    }
+    25% { 
+      transform: rotate(90deg) scale(1.2);
+      opacity: 1;
+    }
+    50% { 
+      transform: rotate(180deg) scale(0.9);
+      opacity: 0.9;
+    }
+    75% { 
+      transform: rotate(270deg) scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes discoBall {
+    0%, 100% { 
+      transform: rotate(0deg) scale(1);
+      filter: drop-shadow(0 0 15px rgba(255,255,255,0.6)) hue-rotate(0deg);
+    }
+    25% { 
+      transform: rotate(90deg) scale(1.05);
+      filter: drop-shadow(0 0 20px rgba(255,0,255,0.8)) hue-rotate(90deg);
+    }
+    50% { 
+      transform: rotate(180deg) scale(0.95);
+      filter: drop-shadow(0 0 15px rgba(0,255,255,0.7)) hue-rotate(180deg);
+    }
+    75% { 
+      transform: rotate(270deg) scale(1.1);
+      filter: drop-shadow(0 0 25px rgba(255,255,0,0.9)) hue-rotate(270deg);
+    }
+  }
 }

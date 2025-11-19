@@ -72,6 +72,8 @@ git push -u origin main
 
 ## Part 4: Deploy to Hosting Platform
 
+**⚠️ Important**: GitHub Pages won't work for this app because it's a full-stack application with a Node.js backend. You need a platform that supports Node.js servers.
+
 Choose one of these platforms (I recommend **Railway** for easiest setup):
 
 ### Option A: Railway (Recommended - Easiest)

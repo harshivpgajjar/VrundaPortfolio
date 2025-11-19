@@ -108,11 +108,10 @@ export default function BlogPostPage() {
             </header>
 
             {/* Post content */}
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-lg max-w-none markdown-content">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeHighlight]}
-                className="markdown-content"
               >
                 {post.content}
               </ReactMarkdown>

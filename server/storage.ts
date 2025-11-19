@@ -203,7 +203,9 @@ Personal essays aren't just writing exercises—they're powerful tools for profe
       ...insertPost, 
       id, 
       createdAt: now, 
-      updatedAt: now 
+      updatedAt: now,
+      published: insertPost.published ?? false,
+      tags: insertPost.tags ?? null
     };
     this.blogPosts.set(id, post);
     return post;
